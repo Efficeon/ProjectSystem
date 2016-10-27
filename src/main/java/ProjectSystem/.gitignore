@@ -1,0 +1,9 @@
+# folder
+.idea/*
+.idea/vcs.xml
+out/*
+src/com/JavaStudent/HTML_test/*
+pom.xml
+
+# class files
+*.class

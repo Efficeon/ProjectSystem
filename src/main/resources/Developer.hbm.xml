@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ProjectSystem.model.Developer" table="developers">
+        <meta attribute="class-description">
+            This class contains developer details.
+        </meta>
+
+        <id name="developerID" type="int" column="developerID"></id>
+        <property name="name" column="name" type="string"/>
+        <property name="teamID" column="teamID" type="int"/>
+    </class>
+</hibernate-mapping>
