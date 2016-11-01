@@ -1,12 +1,25 @@
 package ProjectSystem.model;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Entity
+@Table(name = "teams")
 public class Team implements Model{
+
+    @Id
+    @Column(name = "teamID")
     private int teamID;
+
+    @Column(name = "name")
     private String name;
-    private List<Developer> teamOfDeveloper = null;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Developer> teamOfDeveloper;
+
+    @Column(name = "projectID")
     private int projectID;
 
     public Team() {
@@ -16,7 +29,6 @@ public class Team implements Model{
         this.teamID = teamID;
         this.name = name;
         this.projectID = projectID;
-
         this.teamOfDeveloper = new ArrayList<>();
     }
 

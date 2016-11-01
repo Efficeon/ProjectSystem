@@ -10,6 +10,11 @@
         </meta>
 
         <id name="projectID" type="int" column="projectID"></id>
+        <list name="teams" cascade="all">
+            <key column="teamID"/>
+            <list-index column="projectID"/>
+            <one-to-many class="ProjectSystem.model.Team"/>
+        </list>
         <property name="name" column="name" type="string"/>
     </class>
 </hibernate-mapping>

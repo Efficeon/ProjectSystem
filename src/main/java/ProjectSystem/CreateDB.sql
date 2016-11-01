@@ -16,7 +16,7 @@ CREATE TABLE teams(
   PRIMARY KEY (teamID)
 );
 
-CREATE TABLE DevelopmentDB.projects(
+CREATE TABLE projects(
   projectID INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(50) NOT NULL,
   PRIMARY KEY (projectID)

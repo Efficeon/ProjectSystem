@@ -21,8 +21,5 @@
             root
         </property>
 
-        <mapping resource="Developer.hbm.xml"/>
-        <mapping resource="Project.hbm.xml"/>
-        <mapping resource="Team.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

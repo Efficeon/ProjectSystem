@@ -1,13 +1,22 @@
 package ProjectSystem.model;
 
-
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "projects")
 public class Project implements Model{
+
+    @Id
+    @Column(name = "projectID")
     private int projectID;
+
+    @Column(name= "name")
     private String name;
-    private List<Team> teams = null;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Team> teams;
 
     public Project() {
     }

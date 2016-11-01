@@ -10,6 +10,11 @@
         </meta>
 
         <id name="teamID" type="int" column="teamID"></id>
+        <list name="teamOfDeveloper" cascade="all">
+            <key column="developerID"/>
+            <list-index column="teamID"/>
+            <one-to-many class="ProjectSystem.model.Developer"/>
+        </list>
         <property name="name" column="name" type="string"/>
         <property name="projectID" column="projectID" type="int"/>
     </class>

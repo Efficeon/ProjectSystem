@@ -1,8 +1,20 @@
 package ProjectSystem.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "developers")
+
 public class Developer implements Model{
+
+    @Id
+    @Column(name = "developerID")
     private int developerID;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "teamID")
     private int teamID;
 
     public Developer() {
