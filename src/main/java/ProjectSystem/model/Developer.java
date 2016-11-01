@@ -7,15 +7,15 @@ import javax.persistence.*;
 public class Developer implements Model{
 
     @Id
-    public Integer developerID;
+    private Integer developerID;
 
     @Column(name = "name")
-    public String name;
+    private String name;
 
     @Column(name = "teamID")
-    public Integer teamID;
+    private Integer teamID;
 
-    public Developer() {
+    private Developer() {
     }
 
     public Developer(Integer developerID, String name,Integer teamID) {

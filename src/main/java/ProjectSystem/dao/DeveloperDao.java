@@ -1,5 +1,7 @@
 package ProjectSystem.dao;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ProjectSystem.model.Developer;
 import ProjectSystem.view.ConsoleHelper;
 import org.hibernate.Session;
@@ -8,11 +10,12 @@ import java.util.List;
 
 public class DeveloperDao{
     private List<Developer> listDevelopers = null;
-
+    private static Logger logger = LoggerFactory.getLogger(DeveloperDao.class);
 
     protected List<Developer> readingAllElements() throws SQLException {
         Session session = ConnectDao.sessionFactory.openSession();
         listDevelopers = session.createQuery("FROM Developer").list();
+        logger.info("Reading all Developer: " + listDevelopers);
         session.close();
         return listDevelopers;
     }
@@ -27,6 +30,7 @@ public class DeveloperDao{
     protected List<Developer> readingElement(int developerID) throws SQLException {
         Session session = ConnectDao.sessionFactory.openSession();
         listDevelopers = session.createQuery("FROM Developer WHERE teamID="+developerID).list();
+        logger.info("Reading Developer: " + listDevelopers);
         session.close();
         return listDevelopers;
     }
@@ -36,6 +40,7 @@ public class DeveloperDao{
         Developer developer = (Developer) session.get(Developer.class, developerID);
         developer.setTeamID(teamID);
         session.update(developer);
+        logger.info("update Developer: " + listDevelopers);
         session.close();
     }
 
@@ -43,6 +48,7 @@ public class DeveloperDao{
         Session session = ConnectDao.sessionFactory.openSession();
         Developer developer = (Developer) session.get(Developer.class, developerID);
         session.delete(developer);
+        logger.info("delete Developer: " + developer);
         session.close();
     }
 
@@ -50,6 +56,7 @@ public class DeveloperDao{
         Session session = ConnectDao.sessionFactory.openSession();
         Developer developer = new Developer(developerID, name, teamID);
         session.save(developer);
+        logger.info("create Developer: " + developer);
         session.close();
     }
 
