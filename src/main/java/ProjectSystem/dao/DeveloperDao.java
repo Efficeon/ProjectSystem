@@ -49,7 +49,7 @@ public class DeveloperDao{
     public void createElement(int developerID, String name, int teamID) throws SQLException {
         Session session = ConnectDao.sessionFactory.openSession();
         Developer developer = new Developer(developerID, name, teamID);
-        session.saveOrUpdate(developer);
+        session.save(developer);
         session.close();
     }
 

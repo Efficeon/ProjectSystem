@@ -4,23 +4,21 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "developers")
-
 public class Developer implements Model{
 
     @Id
-    @Column(name = "developerID")
-    private int developerID;
+    public Integer developerID;
 
     @Column(name = "name")
-    private String name;
+    public String name;
 
     @Column(name = "teamID")
-    private int teamID;
+    public Integer teamID;
 
     public Developer() {
     }
 
-    public Developer(int developerID, String name,int teamID) {
+    public Developer(Integer developerID, String name,Integer teamID) {
         this.developerID = developerID;
         this.name = name;
         this.teamID = teamID;
