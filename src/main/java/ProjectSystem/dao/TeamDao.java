@@ -1,78 +1,83 @@
 package ProjectSystem.dao;
 
+import ProjectSystem.model.Project;
 import ProjectSystem.model.Team;
 import ProjectSystem.view.ConsoleHelper;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.sql.SQLException;
 import java.util.List;
+import java.util.Set;
 
 public class TeamDao{
     private List<Team> listTeams = null;
+    private Set<Project> projects = null;
+    ProjectDao projectDao = null;
     private static Logger logger = LoggerFactory.getLogger(DeveloperDao.class);
 
-    public List<Team> readingAllElements() throws SQLException {
+    public void updateElement(int teamID, String name, int projectID){
         Session session = ConnectDao.sessionFactory.openSession();
-        listTeams= session.createQuery("FROM Team").list();
-        logger.info("Reading all Teams: " + listTeams);
-        session.close();
-        return listTeams;
-    }
-
-    public List<Team> readingTeamsElements(int teamID) throws SQLException {
-        Session session = ConnectDao.sessionFactory.openSession();
-        listTeams = session.createQuery("FROM Team WHERE teamID="+teamID).list();
-        logger.info("Reading Team: " + listTeams);
-        session.close();
-        return listTeams;
-    }
-
-    public List<Team> readingProjectsElements(int projectID) throws SQLException {
-        Session session = ConnectDao.sessionFactory.openSession();
-        listTeams = session.createQuery("FROM Team WHERE projectID="+projectID).list();
-        logger.info("Reading projects elements: " + listTeams);
-        session.close();
-        return listTeams;
-    }
-
-    public void updateElement(int teamID, String name) throws SQLException {
-        Session session = ConnectDao.sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
         Team team = (Team) session.get(Team.class, teamID);
         team.setName(name);
+
+        projects = team.getProjects();
+        projectDao = new ProjectDao();
+        projects.add(projectDao.readingProject(projectID));
+        team.setProjects(projects);
         session.update(team);
+        session.merge(team);
+        transaction.commit();
+        showTeam(teamID);
         logger.info("Update Team: " + team);
         session.close();
+        showTeam(teamID);
     }
 
-    public void deleteElement(int teamID) throws SQLException {
+    public void deleteElement(int teamID){
         Session session = ConnectDao.sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
         Team team = (Team) session.get(Team.class, teamID);
         session.delete(team);
+        transaction.commit();
         logger.info("Delete Team: " + team);
         session.close();
     }
 
-    public void createElement(int teamID, String name, int projectID) throws SQLException {
+    public void createElement(String name) {
         Session session = ConnectDao.sessionFactory.openSession();
-        Team team = new Team(teamID, name, projectID);
-        session.saveOrUpdate(team);
+        Transaction transaction = session.beginTransaction();
+        Team team = new Team(name);
+        session.save(team);
         logger.info("Create Team: " + team);
+        transaction.commit();
+        session.close();
+        showTeam(team.getTeamID());
+    }
+
+    public void showAllTeams(){
+        Session session = ConnectDao.sessionFactory.openSession();
+        listTeams = session.createQuery("FROM Team ").list();
+        logger.info("Reading all Teams: " + listTeams);
+        for (Team team : listTeams){
+            ConsoleHelper.writeMessage(team.toString());
+        }
         session.close();
     }
 
-    public void showAllTeams() throws SQLException {
-        readingAllElements();
-        for (Team team : listTeams){
-            ConsoleHelper.writeMessage(team.toString());
-        }
+    public void showTeam(int teamID){
+        Session session = ConnectDao.sessionFactory.openSession();
+        Team team = (Team) session.get(Team.class, teamID);
+        ConsoleHelper.writeMessage(team.toString());
+        session.close();
     }
 
-    public void showTeam(int teamID) throws SQLException {
-        readingTeamsElements(teamID);
-        for (Team team : listTeams){
-            ConsoleHelper.writeMessage(team.toString());
-        }
+    public Team readingTeam(int teamID) {
+        Session session = ConnectDao.sessionFactory.openSession();
+        Team team = (Team) session.get(Team.class, teamID);
+        session.close();
+        return team;
     }
 }

@@ -16,6 +16,7 @@ public class DeveloperCommand implements Command{
 
         String name;
         int developerID;
+        int projectID;
         int teamID;
 
         ConsoleHelper.writeMessage("* * * РАЗРАБОТЧИКИ * * *" + "\n" +
@@ -26,14 +27,12 @@ public class DeveloperCommand implements Command{
             case 1:
                 ConsoleHelper.writeMessage("Укажите инициалы(Имя и Фамилию) разработчика:\n");
                 name = ConsoleHelper.readString();
-                ConsoleHelper.writeMessage("\nУкажите ID разработчика:\n");
-                developerID = ConsoleHelper.readInt();
-                ConsoleHelper.writeMessage("\nУкажите ID рабочей группы за которой будет закреплен разработчик:\n");
+                ConsoleHelper.writeMessage("\nУкажите ID рабочей группы за которой будет закреплен " +
+                                           "разработчик:\n");
                 teamID = ConsoleHelper.readInt();
                 ConsoleHelper.writeMessage("\nРазработчик создан!\n");
 
-                developerFactory.createDeveloper(developerID, name, teamID);
-                developerDao.showDeveloper(developerID);
+                developerFactory.createDeveloper(name, teamID);
                 break;
             case 2:
                 ConsoleHelper.writeMessage("Укажите ID разработчика:\n");

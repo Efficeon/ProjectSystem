@@ -1,15 +1,22 @@
 package ProjectSystem.dao;
 
+import ProjectSystem.model.Team;
 import ProjectSystem.view.ConsoleHelper;
 import ProjectSystem.model.Project;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ProjectDao{
+
+    private Set<Team> teams = null;
+    private TeamDao teamDao = null;
     private List<Project> listProjects = null;
     private static Logger logger = LoggerFactory.getLogger(DeveloperDao.class);
 
@@ -17,6 +24,7 @@ public class ProjectDao{
         Session session = ConnectDao.sessionFactory.openSession();
         listProjects = session.createQuery("FROM Project").list();
         logger.info("Reading Projects: " + listProjects);
+        session.close();
         return listProjects;
     }
 
@@ -28,13 +36,28 @@ public class ProjectDao{
         return listProjects;
     }
 
-    public void updateElement(int projectID, String name) throws SQLException {
+    public Project readingProject(int projectID) {
         Session session = ConnectDao.sessionFactory.openSession();
         Project project = (Project) session.get(Project.class, projectID);
+        session.close();
+        return project;
+    }
+
+    public void updateElement(int projectID, String name, int teamID) throws SQLException {
+        Session session = ConnectDao.sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        Project project = (Project) session.get(Project.class, projectID);
         project.setName(name);
+        teams = project.getTeams();
+        teamDao = new TeamDao();
+        teams.add(teamDao.readingTeam(teamID));
+        project.setTeams(teams);
         session.update(project);
+        transaction.commit();
         logger.info("Update Project: " + project);
         session.close();
+        showProject(projectID);
+        showProject(projectID);
     }
 
     public void deleteElement(int projectID) throws SQLException {
@@ -45,11 +68,14 @@ public class ProjectDao{
         session.close();
     }
 
-    public void createElement(int projectID, String name) throws SQLException {
+    public void createElement(String name) throws SQLException {
         Session session = ConnectDao.sessionFactory.openSession();
-        Project project = new Project(projectID, name);
-        session.saveOrUpdate(project);
+        Transaction transaction = session.beginTransaction();
+        Project project = new Project(name);
+        session.save(project);
+        transaction.commit();
         logger.info("Create Project: " + project);
+        showProject(project.getProjectID());
         session.close();
     }
 
@@ -61,9 +87,10 @@ public class ProjectDao{
     }
 
     public void showProject(int projectID) throws SQLException {
-        readingProjectsElements(projectID);
-        for (Project project : listProjects){
-            ConsoleHelper.writeMessage(project.toString());
-        }
+        Session session = ConnectDao.sessionFactory.openSession();
+        Project project = (Project) session.get(Project.class, projectID);
+        session.merge(project);
+        ConsoleHelper.writeMessage(project.toString());
+        session.close();
     }
 }

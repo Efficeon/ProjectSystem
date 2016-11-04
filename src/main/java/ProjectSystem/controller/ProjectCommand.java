@@ -15,6 +15,7 @@ public class ProjectCommand implements Command{
 
         String name;
         int projectID;
+        int teamID;
 
         ConsoleHelper.writeMessage("* * * ПРОЕКТЫ * * *" + "\n" +
                 "1 - Добавить | 2 - Удалить | 3 - Изменить | 4 - Показать все | 5 - Найти по ID\n");
@@ -24,10 +25,7 @@ public class ProjectCommand implements Command{
             case 1:
                 ConsoleHelper.writeMessage("Укажите название проекта:\n");
                 name = ConsoleHelper.readString();
-                ConsoleHelper.writeMessage("\nУкажите ID проекта:\n");
-                projectID = ConsoleHelper.readInt();
-                projectFactory.createProject(projectID, name);
-                projectDao.showProject(projectID);
+                projectFactory.createProject(name);
                 ConsoleHelper.writeMessage("\nПроект создан!\n");
                 break;
             case 2:
@@ -41,7 +39,9 @@ public class ProjectCommand implements Command{
                 projectID = ConsoleHelper.readInt();
                 ConsoleHelper.writeMessage("\nУкажите новое имя проекта:\n");
                 name = ConsoleHelper.readString();
-                projectDao.updateElement(projectID, name);
+                ConsoleHelper.writeMessage("Укажите ID рабочей группы:\n");
+                teamID = ConsoleHelper.readInt();
+                projectDao.updateElement(projectID, name, teamID);
                 ConsoleHelper.writeMessage("\nИзменения выполнены!\n");
                 break;
             case 4:

@@ -1,6 +1,6 @@
 package ProjectSystem.dao;
 
-import org.hibernate.*;
+import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import java.sql.*;
 

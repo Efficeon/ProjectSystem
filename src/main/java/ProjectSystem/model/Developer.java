@@ -1,25 +1,30 @@
 package ProjectSystem.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "developers")
 public class Developer implements Model{
 
     @Id
-    private Integer developerID;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "developerID")
+    private int developerID = 0;
 
     @Column(name = "name")
     private String name;
 
     @Column(name = "teamID")
-    private Integer teamID;
+    private int teamID;
 
-    private Developer() {
+    @ManyToMany(mappedBy = "developers")
+    private Set<Team> teams;
+
+    public Developer() {
     }
 
-    public Developer(Integer developerID, String name,Integer teamID) {
-        this.developerID = developerID;
+    public Developer(String name, int teamID) {
         this.name = name;
         this.teamID = teamID;
     }
@@ -46,6 +51,14 @@ public class Developer implements Model{
 
     public void setTeamID(int teamID) {
         this.teamID = teamID;
+    }
+
+    public Set<Team> getTeams() {
+        return teams;
+    }
+
+    public void setTeams(Set<Team> teams) {
+        this.teams = teams;
     }
 
     @Override

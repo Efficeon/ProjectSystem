@@ -26,13 +26,8 @@ public class TeamCommand implements Command{
         case 1:
             ConsoleHelper.writeMessage("Укажите название рабочей группы:\n");
             name = ConsoleHelper.readString();
-            ConsoleHelper.writeMessage("\nУкажите ID рабочей группы:\n");
-            teamID = ConsoleHelper.readInt();
-            ConsoleHelper.writeMessage("\nУкажите ID проекта за которым будет закреплена группа: \n");
-            projectID = ConsoleHelper.readInt();
-            teamFactory.createTeam(teamID, name, projectID);
-            teamDao.showTeam(teamID);
-            ConsoleHelper.writeMessage("\nРазработчик создан!\n");
+            teamFactory.createTeam(name);
+            ConsoleHelper.writeMessage("\nРабочая группа создана создан!\n");
             break;
         case 2:
             ConsoleHelper.writeMessage("Укажите ID рабочей группы:\n");
@@ -45,7 +40,9 @@ public class TeamCommand implements Command{
             teamID = ConsoleHelper.readInt();
             ConsoleHelper.writeMessage("\nУкажите новое имя рабочей группы:\n");
             name = ConsoleHelper.readString();
-            teamDao.updateElement(teamID, name);
+            ConsoleHelper.writeMessage("Укажите ID проекта:\n");
+            projectID = ConsoleHelper.readInt();
+            teamDao.updateElement(teamID, name, projectID);
             ConsoleHelper.writeMessage("\nИзменения выполнены!\n");
             break;
         case 4:

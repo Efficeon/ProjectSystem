@@ -1,35 +1,37 @@
 package ProjectSystem.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.Set;
 
 @Entity
 @Table(name = "teams")
 public class Team implements Model{
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "teamID")
     private int teamID;
 
     @Column(name = "name")
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Developer> teamOfDeveloper;
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name = "teams_developers", joinColumns = @JoinColumn(name = "teamID"),
+              inverseJoinColumns = @JoinColumn(name = "developerID"))
+    private Set<Developer> developers;
 
-    @Column(name = "projectID")
-    private int projectID;
+
+    @ManyToMany(mappedBy = "teams")
+    /*@ManyToMany
+    @JoinTable(name = "projects_teams", joinColumns = @JoinColumn(name = "teamID"),
+    inverseJoinColumns = @JoinColumn(name = "projectID"))*/
+    protected Set<Project> projects;
 
     public Team() {
     }
 
-    public Team(int teamID, String name, int projectID) {
-        this.teamID = teamID;
+    public Team(String name) {
         this.name = name;
-        this.projectID = projectID;
-        this.teamOfDeveloper = new ArrayList<>();
     }
 
     public int getTeamID() {
@@ -48,34 +50,43 @@ public class Team implements Model{
         this.name = name;
     }
 
-    public int getProjectID() {
-        return projectID;
+    public Set<Developer> getDevelopers() {
+        return developers;
     }
 
-    public void setProjectID(int projectID) {
-        this.projectID = projectID;
+    public void setDevelopers(Set<Developer> developers) {
+        this.developers = developers;
     }
 
-    public List<Developer> getTeamOfDeveloper() {
-        return teamOfDeveloper;
+    public Set<Project> getProjects() {
+        return projects;
     }
 
-    public void setTeamOfDeveloper(List<Developer> teamOfDeveloper) {
-        this.teamOfDeveloper = teamOfDeveloper;
+    public void setProjects(Set<Project> projects) {
+        this.projects = projects;
     }
-
     @Override
     public String toString() {
-        String listSDeveloper = "";
-        for (Developer developer : teamOfDeveloper){
-            listSDeveloper += "ID разработчика: " + developer.getDeveloperID() +
+
+        String listDeveloper = "";
+        if (projects != null)
+        for (Developer developer : developers){
+            listDeveloper += "ID разработчика: " + developer.getDeveloperID() +
                               " ФИО: " + developer.getName() + "\n";
         }
+
+        String listProject = "";
+        if (projects != null)
+            for (Project project : projects){
+                listProject += "ID проекта: " + project.getProjectID() +
+                        " название: " + project.getName() + "\n";
+            }
 
         return  "-----------------------------------------------------------------------------------------------" + "\n" +
                 "Имя группы разработчиков: " + name + "; " +"\n" +
                 "Команда разработчиков: " + "\n" +
                 "ID команды: " + teamID + "\n" +
-                "Разработчики: " + "\n" + listSDeveloper;
+                "Разработчики: " + "\n" + listDeveloper + "\n" +
+                "Проекты: " + "\n" + listProject;
     }
 }

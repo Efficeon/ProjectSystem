@@ -1,30 +1,30 @@
 package ProjectSystem.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "projects")
 public class Project implements Model{
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "projectID")
     private int projectID;
 
     @Column(name= "name")
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Team> teams;
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name = "projects_teams", joinColumns = @JoinColumn(name = "projectID"),
+              inverseJoinColumns = @JoinColumn(name = "teamID"))
+    private Set<Team> teams;
 
     public Project() {
     }
 
-    public Project(int projectID, String name) {
-        this.projectID = projectID;
+    public Project(String name) {
         this.name = name;
-        this.teams = new ArrayList<>();
     }
 
     public int getProjectID() {
@@ -43,17 +43,18 @@ public class Project implements Model{
         this.name = name;
     }
 
-    public List<Team> getTeams() {
+    public Set<Team> getTeams() {
         return teams;
     }
 
-    public void setTeams(List<Team> teams) {
+    public void setTeams(Set<Team> teams) {
         this.teams = teams;
     }
 
     @Override
     public String toString() {
         String listTeams = "";
+        if(teams != null)
         for (Team team : teams){
             listTeams += "ID группы: " + team.getTeamID() +
                          " Название группы: " + team.getName() + "\n";
