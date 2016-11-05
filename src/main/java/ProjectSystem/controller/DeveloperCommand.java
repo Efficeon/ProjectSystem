@@ -3,6 +3,7 @@ package ProjectSystem.controller;
 import ProjectSystem.dao.DeveloperDao;
 import ProjectSystem.factory.DeveloperFactory;
 import ProjectSystem.view.ConsoleHelper;
+import javassist.tools.rmi.ObjectNotFoundException;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -58,11 +59,7 @@ public class DeveloperCommand implements Command{
             case 5:
                 ConsoleHelper.writeMessage("Укажите ID разработчика:\n");
                 developerID = ConsoleHelper.readInt();
-                try {
-                    developerDao.showDeveloper(developerID);
-                } catch (NullPointerException e){
-                    ConsoleHelper.writeMessage("Введены некорректные данные.");
-                }
+                developerDao.showDeveloper(developerID);
                 break;
             default:
                 break;

@@ -3,6 +3,7 @@ package ProjectSystem.controller;
 import ProjectSystem.dao.ProjectDao;
 import ProjectSystem.factory.ProjectFactory;
 import ProjectSystem.view.ConsoleHelper;
+import org.hibernate.ObjectNotFoundException;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -70,8 +71,8 @@ public class ProjectCommand implements Command{
                 projectID = ConsoleHelper.readInt();
                 try {
                     projectDao.showProject(projectID);
-                } catch (NullPointerException e){
-                    ConsoleHelper.writeMessage("Введены некорректные данные.");
+                } catch (ObjectNotFoundException e){
+                    ConsoleHelper.writeMessage("Проект с указаным ID отсутствует.");
                 }
         }
     }

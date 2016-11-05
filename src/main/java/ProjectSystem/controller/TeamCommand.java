@@ -3,6 +3,7 @@ package ProjectSystem.controller;
 import ProjectSystem.dao.TeamDao;
 import ProjectSystem.factory.TeamFactory;
 import ProjectSystem.view.ConsoleHelper;
+import org.hibernate.ObjectNotFoundException;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -76,8 +77,8 @@ public class TeamCommand implements Command{
             teamID = ConsoleHelper.readInt();
             try {
                 teamDao.showTeam(teamID);
-            } catch (NullPointerException e){
-                    ConsoleHelper.writeMessage("Введены некорректные данные.");
+            } catch (ObjectNotFoundException e){
+                    ConsoleHelper.writeMessage("Группа с указаным ID отсутствует.");
             }
         }
     }

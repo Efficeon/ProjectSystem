@@ -1,7 +1,6 @@
 package ProjectSystem.dao;
 
 import ProjectSystem.model.Developer;
-import ProjectSystem.model.Project;
 import ProjectSystem.model.Team;
 import ProjectSystem.view.ConsoleHelper;
 import org.hibernate.Session;
@@ -19,6 +18,16 @@ public class TeamDao{
 
     private static Logger logger = LoggerFactory.getLogger(DeveloperDao.class);
 
+    public int createElement(String name) {
+        Session session = ConnectDao.sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        Team team = new Team(name);
+        Integer teamID = (Integer)session.save(team);
+        logger.info("Create Team: " + team.getName());
+        transaction.commit();
+        session.close();
+        return teamID;
+    }
     public void updateElement(int teamID, String name){
         Session session = ConnectDao.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
@@ -53,17 +62,6 @@ public class TeamDao{
         session.close();
     }
 
-    public int createElement(String name) {
-        Session session = ConnectDao.sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        Team team = new Team(name);
-        Integer teamID = (Integer)session.save(team);
-        logger.info("Create Team: " + team.getName());
-        transaction.commit();
-        session.close();
-        return teamID;
-    }
-
     public void showAllTeams(){
         Session session = ConnectDao.sessionFactory.openSession();
         listTeams = session.createQuery("FROM Team").list();
@@ -76,14 +74,19 @@ public class TeamDao{
 
     public void showTeam(int teamID){
         Session session = ConnectDao.sessionFactory.openSession();
-        Team team = (Team) session.get(Team.class, teamID);
+        session.beginTransaction();
+        Team team = (Team) session.load(Team.class, teamID);
+        session.getTransaction().commit();
         ConsoleHelper.writeMessage(team.toString());
         session.close();
+
     }
 
     public Team readingTeam(int teamID) {
         Session session = ConnectDao.sessionFactory.openSession();
-        Team team = (Team) session.get(Team.class, teamID);
+        session.beginTransaction();
+        Team team = (Team) session.load(Team.class, teamID);
+        session.getTransaction().commit();
         session.close();
         return team;
     }

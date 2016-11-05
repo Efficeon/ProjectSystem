@@ -1,6 +1,7 @@
 package ProjectSystem.dao;
 
 import ProjectSystem.model.Team;
+import org.hibernate.ObjectNotFoundException;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,18 @@ public class DeveloperDao{
     private List<Developer> listDevelopers = null;
     private Set<Team> teams = null;
 
+    public int createElement(String name) {
+        Session session = ConnectDao.sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        Developer developer = new Developer(name);
+        teams = new HashSet<>();
+        developer.setTeams(teams);
+        int developerID = (Integer)session.save(developer);
+        transaction.commit();
+        logger.info("Create Developer: " + developer.getName());
+        session.close();
+        return developerID;
+    }
     public void updateElement(int developerID, String name) {
         Session session = ConnectDao.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
@@ -38,19 +51,6 @@ public class DeveloperDao{
         session.close();
     }
 
-    public int createElement(String name) {
-        Session session = ConnectDao.sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        Developer developer = new Developer(name);
-        teams = new HashSet<>();
-        developer.setTeams(teams);
-        int developerID = (Integer)session.save(developer);
-        transaction.commit();
-        logger.info("Create Developer: " + developer.getName());
-        session.close();
-        return developerID;
-    }
-
     public void showAllDevelopers() {
         Session session = ConnectDao.sessionFactory.openSession();
         listDevelopers = session.createQuery("FROM Developer").list();
@@ -61,16 +61,26 @@ public class DeveloperDao{
         session.close();
     }
 
-    public void showDeveloper(int developerID) {
+    public void showDeveloper(int developerID){
         Session session = ConnectDao.sessionFactory.openSession();
-        Developer developer = (Developer) session.get(Developer.class, developerID);
-        ConsoleHelper.writeMessage(developer.toString());
-        session.close();
+        session.beginTransaction();
+        Developer developer = null;
+        try {
+            developer = (Developer) session.load(Developer.class, developerID);
+            session.getTransaction().commit();
+            ConsoleHelper.writeMessage(developer.toString());
+        } catch (ObjectNotFoundException e){
+            ConsoleHelper.writeMessage("Разработчик с указанным ID не найден.");
+        } finally {
+            session.close();
+        }
     }
 
     public Developer readingDevelopers(int developerID) {
         Session session = ConnectDao.sessionFactory.openSession();
-        Developer developer = (Developer) session.get(Developer.class, developerID);
+        session.beginTransaction();
+        Developer developer = (Developer) session.load(Developer.class, developerID);
+        session.getTransaction().commit();
         session.close();
         return developer;
     }
