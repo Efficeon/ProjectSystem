@@ -28,55 +28,49 @@ public class ProjectDao{
         return listProjects;
     }
 
-    public List<Project> readingProjectsElements(int projectID) throws SQLException {
-        Session session = ConnectDao.sessionFactory.openSession();
-        listProjects = session.createQuery("FROM Project WHERE projectID="+projectID).list();
-        logger.info("Reading Project: " + listProjects);
-        session.close();
-        return listProjects;
-    }
-
-    public Project readingProject(int projectID) {
-        Session session = ConnectDao.sessionFactory.openSession();
-        Project project = (Project) session.get(Project.class, projectID);
-        session.close();
-        return project;
-    }
-
-    public void updateElement(int projectID, String name, int teamID) throws SQLException {
+    public void updateElement(int projectID, String name) throws SQLException {
         Session session = ConnectDao.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         Project project = (Project) session.get(Project.class, projectID);
         project.setName(name);
+        transaction.commit();
+        logger.info("Update Project: " + project.getName());
+        session.close();
+     }
+
+    public void addTeam(int projectID, int teamID){
+        Session session = ConnectDao.sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        Project project = (Project) session.get(Project.class, projectID);
         teams = project.getTeams();
         teamDao = new TeamDao();
         teams.add(teamDao.readingTeam(teamID));
         project.setTeams(teams);
         session.update(project);
         transaction.commit();
-        logger.info("Update Project: " + project);
+        logger.info("Add team: " + project.getName());
         session.close();
-        showProject(projectID);
-        showProject(projectID);
     }
 
     public void deleteElement(int projectID) throws SQLException {
         Session session = ConnectDao.sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
         Project project = (Project) session.get(Project.class, projectID);
         session.delete(project);
-        logger.info("Update Project: " + project);
+        transaction.commit();
+        logger.info("Update Project: " + project.getName());
         session.close();
     }
 
-    public void createElement(String name) throws SQLException {
+    public int createElement(String name) throws SQLException {
         Session session = ConnectDao.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         Project project = new Project(name);
-        session.save(project);
+        int projectID = (Integer)session.save(project);
         transaction.commit();
-        logger.info("Create Project: " + project);
-        showProject(project.getProjectID());
+        logger.info("Create Project: " + project.getName());
         session.close();
+        return projectID;
     }
 
     public void showAllProjects() throws SQLException {
@@ -89,7 +83,6 @@ public class ProjectDao{
     public void showProject(int projectID) throws SQLException {
         Session session = ConnectDao.sessionFactory.openSession();
         Project project = (Project) session.get(Project.class, projectID);
-        session.merge(project);
         ConsoleHelper.writeMessage(project.toString());
         session.close();
     }

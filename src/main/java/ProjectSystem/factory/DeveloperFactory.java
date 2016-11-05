@@ -2,12 +2,11 @@ package ProjectSystem.factory;
 
 import ProjectSystem.dao.DeveloperDao;
 
-import java.sql.SQLException;
-
 public class DeveloperFactory{
 
-    public void createDeveloper(String name, int teamID) throws SQLException {
+    public int createDeveloper(String name) {
         DeveloperDao developerDao = new DeveloperDao();
-        developerDao.createElement(name, teamID);
+        int developerID = developerDao.createElement(name);
+        return developerID;
     }
 }

@@ -5,8 +5,9 @@ import ProjectSystem.dao.TeamDao;
 import java.sql.SQLException;
 
 public class TeamFactory {
-    public void createTeam(String name) throws SQLException {
+    public int createTeam(String name) throws SQLException {
         TeamDao teamDao = new TeamDao();
-        teamDao.createElement(name);
+        int teamID = teamDao.createElement(name);
+        return teamID;
     }
 }

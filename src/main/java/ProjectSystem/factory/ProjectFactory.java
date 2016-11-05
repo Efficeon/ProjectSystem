@@ -5,8 +5,9 @@ import ProjectSystem.dao.ProjectDao;
 import java.sql.SQLException;
 
 public class ProjectFactory {
-    public void createProject(String name) throws SQLException {
+    public int createProject(String name) throws SQLException {
         ProjectDao projectDao = new ProjectDao();
-        projectDao.createElement(name);
+        int projectID = projectDao.createElement(name);
+        return projectID;
     }
 }

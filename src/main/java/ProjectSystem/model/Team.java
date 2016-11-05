@@ -22,9 +22,6 @@ public class Team implements Model{
 
 
     @ManyToMany(mappedBy = "teams")
-    /*@ManyToMany
-    @JoinTable(name = "projects_teams", joinColumns = @JoinColumn(name = "teamID"),
-    inverseJoinColumns = @JoinColumn(name = "projectID"))*/
     protected Set<Project> projects;
 
     public Team() {
@@ -69,19 +66,16 @@ public class Team implements Model{
     public String toString() {
 
         String listDeveloper = "";
-        if (projects != null)
         for (Developer developer : developers){
             listDeveloper += "ID разработчика: " + developer.getDeveloperID() +
                               " ФИО: " + developer.getName() + "\n";
         }
 
         String listProject = "";
-        if (projects != null)
             for (Project project : projects){
                 listProject += "ID проекта: " + project.getProjectID() +
                         " название: " + project.getName() + "\n";
             }
-
         return  "-----------------------------------------------------------------------------------------------" + "\n" +
                 "Имя группы разработчиков: " + name + "; " +"\n" +
                 "Команда разработчиков: " + "\n" +

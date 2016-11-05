@@ -16,42 +16,69 @@ public class TeamCommand implements Command{
 
         String name;
         int teamID;
-        int projectID;
+        int developerID;
 
         ConsoleHelper.writeMessage("* * * РАБОЧИЕ ГРУППЫ РАЗРАБОТЧИКОВ * * *" + "\n" +
-                "1 - Добавить | 2 - Удалить | 3 - Изменить | 4 - Показать все | 5 - Найти по ID\n");
+                "1 - Добавить | 2 - Удалить | 3 - Изменить | 4 - Добавить разработчика в рабочую группу | " +
+                "5 - Показать все | 6 - Найти по ID\n");
     int commandNumber = ConsoleHelper.readInt();
 
         switch (commandNumber){
         case 1:
             ConsoleHelper.writeMessage("Укажите название рабочей группы:\n");
             name = ConsoleHelper.readString();
-            teamFactory.createTeam(name);
-            ConsoleHelper.writeMessage("\nРабочая группа создана создан!\n");
+            teamID = teamFactory.createTeam(name);
+            teamDao.showTeam(teamID);
+            ConsoleHelper.writeMessage("\nРабочая группа создана!\n");
             break;
         case 2:
             ConsoleHelper.writeMessage("Укажите ID рабочей группы:\n");
             teamID = ConsoleHelper.readInt();
-            teamDao.deleteElement(teamID);
-            ConsoleHelper.writeMessage("\nРабочая группа удалена!\n");
+            try {
+                teamDao.deleteElement(teamID);
+                ConsoleHelper.writeMessage("\nРабочая группа удалена!\n");
+            }
+            catch (IllegalArgumentException e){
+                ConsoleHelper.writeMessage("Разработчик с указаным ID отсутствует.");
+            }
             break;
         case 3:
             ConsoleHelper.writeMessage("Укажите ID рабочей группы:\n");
             teamID = ConsoleHelper.readInt();
             ConsoleHelper.writeMessage("\nУкажите новое имя рабочей группы:\n");
             name = ConsoleHelper.readString();
-            ConsoleHelper.writeMessage("Укажите ID проекта:\n");
-            projectID = ConsoleHelper.readInt();
-            teamDao.updateElement(teamID, name, projectID);
-            ConsoleHelper.writeMessage("\nИзменения выполнены!\n");
+            try {
+                teamDao.updateElement(teamID, name);
+                teamDao.showTeam(teamID);
+                ConsoleHelper.writeMessage("\nИзменения выполнены!\n");
+            } catch (NullPointerException e){
+                ConsoleHelper.writeMessage("Введены некорректные данные.");
+            }
             break;
         case 4:
-            teamDao.showAllTeams();
+            ConsoleHelper.writeMessage("Укажите ID рабочей группы:\n");
+            teamID = ConsoleHelper.readInt();
+            ConsoleHelper.writeMessage("Укажите ID разработчика:\n");
+            developerID = ConsoleHelper.readInt();
+            try {
+                teamDao.addDeveloper(teamID, developerID);
+                teamDao.showTeam(teamID);
+                ConsoleHelper.writeMessage("\nРазработчик добавлен!\n");
+            } catch (NullPointerException e){
+                ConsoleHelper.writeMessage("Введены некорректные данные.");
+            }
             break;
         case 5:
-            ConsoleHelper.writeMessage("Укажите рабочей группы:\n");
+            teamDao.showAllTeams();
+            break;
+        case 6:
+            ConsoleHelper.writeMessage("Укажите ID рабочей группы:\n");
             teamID = ConsoleHelper.readInt();
-            teamDao.showTeam(teamID);
+            try {
+                teamDao.showTeam(teamID);
+            } catch (NullPointerException e){
+                    ConsoleHelper.writeMessage("Введены некорректные данные.");
+            }
+        }
     }
-}
 }

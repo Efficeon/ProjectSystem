@@ -7,57 +7,51 @@ import org.slf4j.LoggerFactory;
 import ProjectSystem.model.Developer;
 import ProjectSystem.view.ConsoleHelper;
 import org.hibernate.Session;
-import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class DeveloperDao{
-    private List<Developer> listDevelopers = null;
     private static Logger logger = LoggerFactory.getLogger(DeveloperDao.class);
-    private TeamDao teamDao = null;
+    private List<Developer> listDevelopers = null;
     private Set<Team> teams = null;
 
-    public void updateElement(int developerID, int teamID) throws SQLException {
+    public void updateElement(int developerID, String name) {
         Session session = ConnectDao.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         Developer developer = (Developer) session.get(Developer.class, developerID);
-        developer.setTeamID(teamID);
+        developer.setName(name);
         session.update(developer);
         transaction.commit();
         showDeveloper(developerID);
-        logger.info("update Developer: " + listDevelopers);
+        logger.info("Update Developer: " + listDevelopers);
         session.close();
     }
 
-    public void deleteElement(int developerID) throws SQLException {
+    public void deleteElement(int developerID) {
         Session session = ConnectDao.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         Developer developer = (Developer) session.get(Developer.class, developerID);
         session.delete(developer);
         transaction.commit();
-        logger.info("Delete Developer: " + developer);
+        logger.info("Delete Developer: " + developer.getName());
         session.close();
     }
 
-    public void createElement(String name, int teamID) throws SQLException {
-        Team team = teamDao.readingTeam(teamID);
-        teams.add(team);
-
+    public int createElement(String name) {
         Session session = ConnectDao.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        Developer developer = new Developer(name, teamID);
-
+        Developer developer = new Developer(name);
         teams = new HashSet<>();
         developer.setTeams(teams);
-        session.save(developer);
+        int developerID = (Integer)session.save(developer);
         transaction.commit();
-        logger.info("Create Developer: " + developer);
+        logger.info("Create Developer: " + developer.getName());
         session.close();
-        showDeveloper(developer.getDeveloperID());
+        return developerID;
     }
 
-    public void showAllDevelopers() throws SQLException {
+    public void showAllDevelopers() {
         Session session = ConnectDao.sessionFactory.openSession();
         listDevelopers = session.createQuery("FROM Developer").list();
         logger.info("Reading all Developer: " + listDevelopers);
@@ -67,10 +61,17 @@ public class DeveloperDao{
         session.close();
     }
 
-    public void showDeveloper(int developerID) throws SQLException {
+    public void showDeveloper(int developerID) {
         Session session = ConnectDao.sessionFactory.openSession();
         Developer developer = (Developer) session.get(Developer.class, developerID);
         ConsoleHelper.writeMessage(developer.toString());
         session.close();
+    }
+
+    public Developer readingDevelopers(int developerID) {
+        Session session = ConnectDao.sessionFactory.openSession();
+        Developer developer = (Developer) session.get(Developer.class, developerID);
+        session.close();
+        return developer;
     }
 }

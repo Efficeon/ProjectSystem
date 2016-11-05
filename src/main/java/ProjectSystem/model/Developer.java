@@ -15,18 +15,14 @@ public class Developer implements Model{
     @Column(name = "name")
     private String name;
 
-    @Column(name = "teamID")
-    private int teamID;
-
     @ManyToMany(mappedBy = "developers")
     private Set<Team> teams;
 
     public Developer() {
     }
 
-    public Developer(String name, int teamID) {
+    public Developer(String name) {
         this.name = name;
-        this.teamID = teamID;
     }
 
     public int getDeveloperID() {
@@ -45,14 +41,6 @@ public class Developer implements Model{
         this.name = name;
     }
 
-    public int getTeamID() {
-        return teamID;
-    }
-
-    public void setTeamID(int teamID) {
-        this.teamID = teamID;
-    }
-
     public Set<Team> getTeams() {
         return teams;
     }
@@ -63,9 +51,16 @@ public class Developer implements Model{
 
     @Override
     public String toString() {
+        String listTeams = "";
+        //if(teams != null)
+            for (Team team : teams){
+                listTeams += "ID группы: " + team.getTeamID() +
+                        " Название группы: " + team.getName() + "\n";
+            }
+
         return "-----------------------------------------------------------------------------------------------" + "\n" +
                 "Разработчик: " + name + "\n" +
                 "ID разработчика: " + developerID + "\n" +
-                "ID команды разработчика: " + teamID;
+                "ID команды разработчика: " + "\n" + listTeams;
     }
 }
