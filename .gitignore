@@ -1,4 +1,7 @@
 # folder
 .idea/*
-.idea/vcs.xml
 target/*
+.idea/vcs.xml
+target/classes/*
+target/generated-sources/*
+

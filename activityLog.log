@@ -1,0 +1,1099 @@
+06 ноя 2016 00:32:48,262 main - Database ->
+       name : MySQL
+    version : 5.5.52-0ubuntu0.14.04.1
+      major : 5
+      minor : 5
+06 ноя 2016 00:32:48,263 main - Driver ->
+       name : MySQL Connector Java
+    version : mysql-connector-java-5.1.36 ( Revision: 4fc1f969f740409a4e03750316df2c0e429f3dc8 )
+      major : 5
+      minor : 1
+06 ноя 2016 00:32:48,263 main - JDBC version : 4.0
+06 ноя 2016 00:32:48,272 main - Unexpected error trying to gauge level of JDBC REF_CURSOR support : null
+06 ноя 2016 00:32:48,490 main - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+06 ноя 2016 00:32:48,766 main - Processing hbm.xml files
+06 ноя 2016 00:32:48,767 main - Process annotated classes
+06 ноя 2016 00:32:48,790 main - Binding entity from annotated class: ProjectSystem.model.Developer
+06 ноя 2016 00:32:48,939 main - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+06 ноя 2016 00:32:48,947 main - No value specified for 'javax.persistence.sharedCache.mode'; using UNSPECIFIED
+06 ноя 2016 00:32:48,994 main - Import with entity name Developer
+06 ноя 2016 00:32:49,008 main - Bind entity ProjectSystem.model.Developer on table developers
+06 ноя 2016 00:32:49,222 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(developers), mappingColumn=developerID, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,241 main - MetadataSourceProcessor property developerID with lazy=false
+06 ноя 2016 00:32:49,252 main - Attempting to locate auto-apply AttributeConverter for property [ProjectSystem.model.Developer:developerID]
+06 ноя 2016 00:32:49,258 main - building SimpleValue for developerID
+06 ноя 2016 00:32:49,277 main - Building property developerID
+06 ноя 2016 00:32:49,317 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(developers), mappingColumn=name, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,320 main - MetadataSourceProcessor property name with lazy=false
+06 ноя 2016 00:32:49,321 main - Attempting to locate auto-apply AttributeConverter for property [ProjectSystem.model.Developer:name]
+06 ноя 2016 00:32:49,323 main - building SimpleValue for name
+06 ноя 2016 00:32:49,324 main - Building property name
+06 ноя 2016 00:32:49,337 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(developers), mappingColumn=null, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,383 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(developers), mappingColumn=element, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,386 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(developers), mappingColumn=teams_KEY, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,393 main - Binding column: Ejb3JoinColumn{logicalColumnName='teams_KEY', referencedColumn='null', mappedBy='null'}
+06 ноя 2016 00:32:49,397 main - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='developers'}
+06 ноя 2016 00:32:49,398 main - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='developers'}
+06 ноя 2016 00:32:49,401 main - Collection role: ProjectSystem.model.Developer.teams
+06 ноя 2016 00:32:49,413 main - Building property teams
+06 ноя 2016 00:32:49,422 main - Binding entity from annotated class: ProjectSystem.model.Team
+06 ноя 2016 00:32:49,425 main - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+06 ноя 2016 00:32:49,426 main - No value specified for 'javax.persistence.sharedCache.mode'; using UNSPECIFIED
+06 ноя 2016 00:32:49,431 main - Import with entity name Team
+06 ноя 2016 00:32:49,431 main - Bind entity ProjectSystem.model.Team on table teams
+06 ноя 2016 00:32:49,489 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(teams), mappingColumn=teamID, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,491 main - MetadataSourceProcessor property teamID with lazy=false
+06 ноя 2016 00:32:49,492 main - Attempting to locate auto-apply AttributeConverter for property [ProjectSystem.model.Team:teamID]
+06 ноя 2016 00:32:49,493 main - building SimpleValue for teamID
+06 ноя 2016 00:32:49,493 main - Building property teamID
+06 ноя 2016 00:32:49,494 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(teams), mappingColumn=null, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,495 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(teams), mappingColumn=element, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,497 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(teams), mappingColumn=developers_KEY, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,497 main - Binding column: Ejb3JoinColumn{logicalColumnName='developers_KEY', referencedColumn='null', mappedBy='null'}
+06 ноя 2016 00:32:49,499 main - Binding column: Ejb3JoinColumn{logicalColumnName='teamID', referencedColumn='', mappedBy=''}
+06 ноя 2016 00:32:49,499 main - Binding column: Ejb3JoinColumn{logicalColumnName='developerID', referencedColumn='', mappedBy=''}
+06 ноя 2016 00:32:49,500 main - Collection role: ProjectSystem.model.Team.developers
+06 ноя 2016 00:32:49,500 main - Building property developers
+06 ноя 2016 00:32:49,502 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(teams), mappingColumn=name, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,503 main - MetadataSourceProcessor property name with lazy=false
+06 ноя 2016 00:32:49,503 main - Attempting to locate auto-apply AttributeConverter for property [ProjectSystem.model.Team:name]
+06 ноя 2016 00:32:49,504 main - building SimpleValue for name
+06 ноя 2016 00:32:49,504 main - Building property name
+06 ноя 2016 00:32:49,505 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(teams), mappingColumn=null, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,506 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(teams), mappingColumn=element, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,506 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(teams), mappingColumn=projects_KEY, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,507 main - Binding column: Ejb3JoinColumn{logicalColumnName='projects_KEY', referencedColumn='null', mappedBy='null'}
+06 ноя 2016 00:32:49,508 main - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='teams'}
+06 ноя 2016 00:32:49,508 main - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='teams'}
+06 ноя 2016 00:32:49,508 main - Collection role: ProjectSystem.model.Team.projects
+06 ноя 2016 00:32:49,509 main - Building property projects
+06 ноя 2016 00:32:49,509 main - Binding entity from annotated class: ProjectSystem.model.Project
+06 ноя 2016 00:32:49,510 main - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+06 ноя 2016 00:32:49,510 main - No value specified for 'javax.persistence.sharedCache.mode'; using UNSPECIFIED
+06 ноя 2016 00:32:49,511 main - Import with entity name Project
+06 ноя 2016 00:32:49,511 main - Bind entity ProjectSystem.model.Project on table projects
+06 ноя 2016 00:32:49,519 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(projects), mappingColumn=projectID, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,519 main - MetadataSourceProcessor property projectID with lazy=false
+06 ноя 2016 00:32:49,520 main - Attempting to locate auto-apply AttributeConverter for property [ProjectSystem.model.Project:projectID]
+06 ноя 2016 00:32:49,520 main - building SimpleValue for projectID
+06 ноя 2016 00:32:49,520 main - Building property projectID
+06 ноя 2016 00:32:49,521 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(projects), mappingColumn=name, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,522 main - MetadataSourceProcessor property name with lazy=false
+06 ноя 2016 00:32:49,522 main - Attempting to locate auto-apply AttributeConverter for property [ProjectSystem.model.Project:name]
+06 ноя 2016 00:32:49,523 main - building SimpleValue for name
+06 ноя 2016 00:32:49,523 main - Building property name
+06 ноя 2016 00:32:49,524 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(projects), mappingColumn=null, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,525 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(projects), mappingColumn=element, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,525 main - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(projects), mappingColumn=teams_KEY, insertable=true, updatable=true, unique=false}
+06 ноя 2016 00:32:49,526 main - Binding column: Ejb3JoinColumn{logicalColumnName='teams_KEY', referencedColumn='null', mappedBy='null'}
+06 ноя 2016 00:32:49,526 main - Binding column: Ejb3JoinColumn{logicalColumnName='projectID', referencedColumn='', mappedBy=''}
+06 ноя 2016 00:32:49,527 main - Binding column: Ejb3JoinColumn{logicalColumnName='teamID', referencedColumn='', mappedBy=''}
+06 ноя 2016 00:32:49,527 main - Collection role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:32:49,528 main - Building property teams
+06 ноя 2016 00:32:49,531 main - Starting fillSimpleValue for developerID
+06 ноя 2016 00:32:49,531 main - Starting fillSimpleValue for name
+06 ноя 2016 00:32:49,532 main - Starting fillSimpleValue for teamID
+06 ноя 2016 00:32:49,532 main - Starting fillSimpleValue for name
+06 ноя 2016 00:32:49,532 main - Starting fillSimpleValue for projectID
+06 ноя 2016 00:32:49,534 main - Starting fillSimpleValue for name
+06 ноя 2016 00:32:49,536 main - Processing fk mappings (*ToOne and JoinedSubclass)
+06 ноя 2016 00:32:49,541 main - Processing extends queue
+06 ноя 2016 00:32:49,541 main - Processing extends queue
+06 ноя 2016 00:32:49,542 main - Processing collection mappings
+06 ноя 2016 00:32:49,542 main - Second pass for collection: ProjectSystem.model.Project.teams
+06 ноя 2016 00:32:49,543 main - Binding as ManyToMany: ProjectSystem.model.Project.teams
+06 ноя 2016 00:32:49,579 main - Mapped collection key: projectID, element: teamID
+06 ноя 2016 00:32:49,579 main - Second pass for collection: ProjectSystem.model.Team.developers
+06 ноя 2016 00:32:49,579 main - Binding as ManyToMany: ProjectSystem.model.Team.developers
+06 ноя 2016 00:32:49,581 main - Mapped collection key: teamID, element: developerID
+06 ноя 2016 00:32:49,582 main - Second pass for collection: ProjectSystem.model.Developer.teams
+06 ноя 2016 00:32:49,585 main - Binding as ManyToMany: ProjectSystem.model.Developer.teams
+06 ноя 2016 00:32:49,586 main - Retrieving property ProjectSystem.model.Team.developers
+06 ноя 2016 00:32:49,587 main - Mapped collection key: developerID, element: teamID
+06 ноя 2016 00:32:49,587 main - Second pass for collection: ProjectSystem.model.Team.projects
+06 ноя 2016 00:32:49,587 main - Binding as ManyToMany: ProjectSystem.model.Team.projects
+06 ноя 2016 00:32:49,588 main - Retrieving property ProjectSystem.model.Project.teams
+06 ноя 2016 00:32:49,589 main - Mapped collection key: teamID, element: projectID
+06 ноя 2016 00:32:49,589 main - Processing native query and ResultSetMapping mappings
+06 ноя 2016 00:32:49,589 main - Processing association property references
+06 ноя 2016 00:32:49,590 main - Creating tables' unique integer identifiers
+06 ноя 2016 00:32:49,590 main - Processing foreign key constraints
+06 ноя 2016 00:32:49,591 main - Resolving reference to class: ProjectSystem.model.Team
+06 ноя 2016 00:32:49,591 main - Resolving reference to class: ProjectSystem.model.Project
+06 ноя 2016 00:32:49,592 main - Resolving reference to class: ProjectSystem.model.Developer
+06 ноя 2016 00:32:49,592 main - Resolving reference to class: ProjectSystem.model.Team
+06 ноя 2016 00:32:49,601 main - No JtaPlatform was specified, checking resolver
+06 ноя 2016 00:32:49,603 main - No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+06 ноя 2016 00:32:49,614 main - Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+06 ноя 2016 00:32:49,623 main - Automatic flush during beforeCompletion(): disabled
+06 ноя 2016 00:32:49,624 main - Automatic session close at end of transaction: disabled
+06 ноя 2016 00:32:49,624 main - JDBC batch size: 15
+06 ноя 2016 00:32:49,624 main - JDBC batch updates for versioned data: disabled
+06 ноя 2016 00:32:49,625 main - Scrollable result sets: enabled
+06 ноя 2016 00:32:49,625 main - Wrap result sets: disabled
+06 ноя 2016 00:32:49,625 main - JDBC3 getGeneratedKeys(): enabled
+06 ноя 2016 00:32:49,626 main - multi-tenancy strategy : NONE
+06 ноя 2016 00:32:49,626 main - Connection release mode: auto
+06 ноя 2016 00:32:49,626 main - HHH000399: Using default transaction strategy (direct JDBC transactions)
+06 ноя 2016 00:32:49,637 main - Using BatchFetchStyle : LEGACY
+06 ноя 2016 00:32:49,638 main - Maximum outer join fetch depth: 2
+06 ноя 2016 00:32:49,638 main - Default batch fetch size: 1
+06 ноя 2016 00:32:49,638 main - Generate SQL with comments: disabled
+06 ноя 2016 00:32:49,639 main - Order SQL updates by primary key: disabled
+06 ноя 2016 00:32:49,639 main - Order SQL inserts for batching: disabled
+06 ноя 2016 00:32:49,639 main - Default null ordering: none
+06 ноя 2016 00:32:49,641 main - Query translator: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory
+06 ноя 2016 00:32:49,686 main - HHH000397: Using ASTQueryTranslatorFactory
+06 ноя 2016 00:32:49,687 main - Query language substitutions: {}
+06 ноя 2016 00:32:49,687 main - JPA-QL strict compliance: disabled
+06 ноя 2016 00:32:49,687 main - Second-level cache: enabled
+06 ноя 2016 00:32:49,688 main - Query cache: disabled
+06 ноя 2016 00:32:49,690 main - Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+06 ноя 2016 00:32:49,699 main - Optimize cache for minimal puts: disabled
+06 ноя 2016 00:32:49,700 main - Structured second-level cache entries: disabled
+06 ноя 2016 00:32:49,700 main - Second-level cache direct-reference entries: disabled
+06 ноя 2016 00:32:49,700 main - Automatic eviction of collection cache: disabled
+06 ноя 2016 00:32:49,700 main - Statistics: disabled
+06 ноя 2016 00:32:49,701 main - Deleted entity synthetic identifier rollback: disabled
+06 ноя 2016 00:32:49,701 main - Default entity-mode: pojo
+06 ноя 2016 00:32:49,704 main - Named query checking : enabled
+06 ноя 2016 00:32:49,704 main - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+06 ноя 2016 00:32:49,704 main - Allow initialization of lazy state outside session : : disabled
+06 ноя 2016 00:32:49,704 main - JTA Track by Thread: enabled
+06 ноя 2016 00:32:49,728 main - Building session factory
+06 ноя 2016 00:32:49,769 main - Session factory constructed with filter configurations : {}
+06 ноя 2016 00:32:49,770 main - Instantiating session factory with properties: {java.runtime.name=Java(TM) SE Runtime Environment, hibernate.connection.password=root, sun.boot.library.path=/usr/lib/jvm/java-8-oracle/jre/lib/amd64, java.vm.version=25.101-b13, hibernate.connection.username=root, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=:, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, idea.launcher.port=7542, user.country=UA, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=unknown, java.vm.specification.name=Java Virtual Machine Specification, user.dir=/home/lion/IdeaProjects/ProjectSystem, java.runtime.version=1.8.0_101-b13, java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment, java.endorsed.dirs=/usr/lib/jvm/java-8-oracle/jre/lib/endorsed, os.arch=amd64, java.io.tmpdir=/tmp, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, os.name=Linux, sun.jnu.encoding=UTF-8, java.library.path=/home/lion/java/idea-IU-162.2228.15/bin::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib, java.specification.name=Java Platform API Specification, java.class.version=52.0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=3.19.0-32-generic, user.home=/home/lion, connection.password=root, user.timezone=Europe/Kiev, java.awt.printerjob=sun.print.PSPrinterJob, connection.username=root, java.specification.version=1.8, idea.launcher.bin.path=/home/lion/java/idea-IU-162.2228.15/bin, file.encoding=UTF-8, hibernate.connection.driver_class=com.mysql.jdbc.Driver, user.name=lion, java.class.path=/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/deploy.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-oracle/jre/lib/javaws.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-oracle/jre/lib/plugin.jar:/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/home/lion/IdeaProjects/ProjectSystem/target/classes:/home/lion/.m2/repository/org/springframework/spring-context/4.0.3.RELEASE/spring-context-4.0.3.RELEASE.jar:/home/lion/.m2/repository/org/springframework/spring-aop/4.0.3.RELEASE/spring-aop-4.0.3.RELEASE.jar:/home/lion/.m2/repository/org/springframework/spring-beans/4.0.3.RELEASE/spring-beans-4.0.3.RELEASE.jar:/home/lion/.m2/repository/org/springframework/spring-core/4.0.3.RELEASE/spring-core-4.0.3.RELEASE.jar:/home/lion/.m2/repository/org/springframework/spring-expression/4.0.3.RELEASE/spring-expression-4.0.3.RELEASE.jar:/home/lion/.m2/repository/org/springframework/spring-webmvc/4.0.3.RELEASE/spring-webmvc-4.0.3.RELEASE.jar:/home/lion/.m2/repository/org/springframework/spring-web/4.0.3.RELEASE/spring-web-4.0.3.RELEASE.jar:/home/lion/.m2/repository/org/springframework/spring-tx/4.0.3.RELEASE/spring-tx-4.0.3.RELEASE.jar:/home/lion/.m2/repository/org/hibernate/hibernate-core/4.3.5.Final/hibernate-core-4.3.5.Final.jar:/home/lion/.m2/repository/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.jar:/home/lion/.m2/repository/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar:/home/lion/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.jar:/home/lion/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/home/lion/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/home/lion/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.4.Final/hibernate-commons-annotations-4.0.4.Final.jar:/home/lion/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar:/home/lion/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar:/home/lion/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/home/lion/.m2/repository/org/jboss/jandex/1.1.0.Final/jandex-1.1.0.Final.jar:/home/lion/.m2/repository/org/hibernate/hibernate-entitymanager/4.3.5.Final/hibernate-entitymanager-4.3.5.Final.jar:/home/lion/.m2/repository/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar:/home/lion/.m2/repository/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar:/home/lion/.m2/repository/org/springframework/spring-orm/4.0.3.RELEASE/spring-orm-4.0.3.RELEASE.jar:/home/lion/.m2/repository/org/springframework/spring-jdbc/4.0.3.RELEASE/spring-jdbc-4.0.3.RELEASE.jar:/home/lion/.m2/repository/org/aspectj/aspectjrt/1.7.4/aspectjrt-1.7.4.jar:/home/lion/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar:/home/lion/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.5/jcl-over-slf4j-1.7.5.jar:/home/lion/.m2/repository/org/slf4j/slf4j-log4j12/1.7.5/slf4j-log4j12-1.7.5.jar:/home/lion/.m2/repository/log4j/log4j/1.2.15/log4j-1.2.15.jar:/home/lion/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/home/lion/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar:/home/lion/.m2/repository/mysql/mysql-connector-java/5.1.36/mysql-connector-java-5.1.36.jar:/home/lion/.m2/repository/org/springframework/security/spring-security-core/3.1.4.RELEASE/spring-security-core-3.1.4.RELEASE.jar:/home/lion/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/home/lion/java/idea-IU-162.2228.15/lib/idea_rt.jar, hibernate.bytecode.use_reflection_optimizer=false, java.vm.specification.version=1.8, sun.arch.data.model=64, java.home=/usr/lib/jvm/java-8-oracle/jre, sun.java.command=com.intellij.rt.execution.application.AppMain ProjectSystem.ProgramRun, hibernate.dialect=org.hibernate.dialect.MySQLDialect, hibernate.connection.url=jdbc:mysql://localhost/DevelopmentDB, java.specification.vendor=Oracle Corporation, user.language=ru, awt.toolkit=sun.awt.X11.XToolkit, java.vm.info=mixed mode, java.version=1.8.0_101, java.ext.dirs=/usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext, sun.boot.class.path=/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes, java.vendor=Oracle Corporation, file.separator=/, connection.driver_class=com.mysql.jdbc.Driver, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, sun.cpu.endian=little, sun.io.unicode.encoding=UnicodeLittle, sun.desktop=gnome, connection.url=jdbc:mysql://localhost/DevelopmentDB, sun.cpu.isalist=}
+06 ноя 2016 00:32:49,805 main - Skipping JACC integration as it was not enabled
+06 ноя 2016 00:32:49,808 main - Setting dialect [org.hibernate.dialect.MySQLDialect]
+06 ноя 2016 00:32:49,811 main - Setting dialect [org.hibernate.dialect.MySQLDialect]
+06 ноя 2016 00:32:49,812 main - Setting dialect [org.hibernate.dialect.MySQLDialect]
+06 ноя 2016 00:32:50,544 main - Static SQL for collection: ProjectSystem.model.Developer.teams
+06 ноя 2016 00:32:50,545 main -  Row insert: insert into teams_developers (developerID, teamID) values (?, ?)
+06 ноя 2016 00:32:50,545 main -  Row update: update teams_developers set teamID=? where developerID=? and teamID=?
+06 ноя 2016 00:32:50,545 main -  Row delete: delete from teams_developers where developerID=? and teamID=?
+06 ноя 2016 00:32:50,546 main -  One-shot delete: delete from teams_developers where developerID=?
+06 ноя 2016 00:32:50,547 main - Static SQL for collection: ProjectSystem.model.Team.developers
+06 ноя 2016 00:32:50,548 main -  Row insert: insert into teams_developers (teamID, developerID) values (?, ?)
+06 ноя 2016 00:32:50,548 main -  Row update: update teams_developers set developerID=? where teamID=? and developerID=?
+06 ноя 2016 00:32:50,548 main -  Row delete: delete from teams_developers where teamID=? and developerID=?
+06 ноя 2016 00:32:50,549 main -  One-shot delete: delete from teams_developers where teamID=?
+06 ноя 2016 00:32:50,550 main - Static SQL for collection: ProjectSystem.model.Project.teams
+06 ноя 2016 00:32:50,550 main -  Row insert: insert into projects_teams (projectID, teamID) values (?, ?)
+06 ноя 2016 00:32:50,550 main -  Row update: update projects_teams set teamID=? where projectID=? and teamID=?
+06 ноя 2016 00:32:50,550 main -  Row delete: delete from projects_teams where projectID=? and teamID=?
+06 ноя 2016 00:32:50,550 main -  One-shot delete: delete from projects_teams where projectID=?
+06 ноя 2016 00:32:50,552 main - Static SQL for collection: ProjectSystem.model.Team.projects
+06 ноя 2016 00:32:50,552 main -  Row insert: insert into projects_teams (teamID, projectID) values (?, ?)
+06 ноя 2016 00:32:50,552 main -  Row update: update projects_teams set projectID=? where teamID=? and projectID=?
+06 ноя 2016 00:32:50,552 main -  Row delete: delete from projects_teams where teamID=? and projectID=?
+06 ноя 2016 00:32:50,552 main -  One-shot delete: delete from projects_teams where teamID=?
+06 ноя 2016 00:32:50,570 main - Static SQL for entity: ProjectSystem.model.Project
+06 ноя 2016 00:32:50,570 main -  Version select: select projectID from projects where projectID =?
+06 ноя 2016 00:32:50,571 main -  Snapshot select: select project_.projectID, project_.name as name2_1_ from projects project_ where project_.projectID=?
+06 ноя 2016 00:32:50,571 main -  Insert 0: insert into projects (name, projectID) values (?, ?)
+06 ноя 2016 00:32:50,571 main -  Update 0: update projects set name=? where projectID=?
+06 ноя 2016 00:32:50,571 main -  Delete 0: delete from projects where projectID=?
+06 ноя 2016 00:32:50,595 main -  Identity insert: insert into projects (name) values (?)
+06 ноя 2016 00:32:50,681 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@66ea810]
+06 ноя 2016 00:32:50,685 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,686 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,695 main - Building LoadPlan...
+06 ноя 2016 00:32:50,733 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,746 main - LoadPlan(entity=ProjectSystem.model.Project)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Project, querySpaceUid=<gen:0>, path=ProjectSystem.model.Project)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Project)
+          - SQL table alias mapping - project0_
+          - alias suffix - 0_
+          - suffixed key columns - {projectI1_1_0_}
+
+06 ноя 2016 00:32:50,752 main - Static select for entity ProjectSystem.model.Project [NONE]: select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=?
+06 ноя 2016 00:32:50,753 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7ac296f6]
+06 ноя 2016 00:32:50,753 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,753 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,753 main - Building LoadPlan...
+06 ноя 2016 00:32:50,754 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,755 main - LoadPlan(entity=ProjectSystem.model.Project)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Project, querySpaceUid=<gen:0>, path=ProjectSystem.model.Project)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Project)
+          - SQL table alias mapping - project0_
+          - alias suffix - 0_
+          - suffixed key columns - {projectI1_1_0_}
+
+06 ноя 2016 00:32:50,755 main - Static select for entity ProjectSystem.model.Project [READ]: select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=?
+06 ноя 2016 00:32:50,755 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@22f59fa]
+06 ноя 2016 00:32:50,755 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,755 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,756 main - Building LoadPlan...
+06 ноя 2016 00:32:50,756 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,757 main - LoadPlan(entity=ProjectSystem.model.Project)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Project, querySpaceUid=<gen:0>, path=ProjectSystem.model.Project)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Project)
+          - SQL table alias mapping - project0_
+          - alias suffix - 0_
+          - suffixed key columns - {projectI1_1_0_}
+
+06 ноя 2016 00:32:50,757 main - Static select for entity ProjectSystem.model.Project [UPGRADE]: select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=? for update
+06 ноя 2016 00:32:50,757 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@16612a51]
+06 ноя 2016 00:32:50,758 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,758 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,758 main - Building LoadPlan...
+06 ноя 2016 00:32:50,758 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,759 main - LoadPlan(entity=ProjectSystem.model.Project)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Project, querySpaceUid=<gen:0>, path=ProjectSystem.model.Project)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Project)
+          - SQL table alias mapping - project0_
+          - alias suffix - 0_
+          - suffixed key columns - {projectI1_1_0_}
+
+06 ноя 2016 00:32:50,760 main - Static select for entity ProjectSystem.model.Project [UPGRADE_NOWAIT]: select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=? for update
+06 ноя 2016 00:32:50,760 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2c78324b]
+06 ноя 2016 00:32:50,760 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,761 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,761 main - Building LoadPlan...
+06 ноя 2016 00:32:50,761 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,762 main - LoadPlan(entity=ProjectSystem.model.Project)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Project, querySpaceUid=<gen:0>, path=ProjectSystem.model.Project)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Project)
+          - SQL table alias mapping - project0_
+          - alias suffix - 0_
+          - suffixed key columns - {projectI1_1_0_}
+
+06 ноя 2016 00:32:50,763 main - Static select for entity ProjectSystem.model.Project [UPGRADE_SKIPLOCKED]: select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=? for update
+06 ноя 2016 00:32:50,763 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@18317edc]
+06 ноя 2016 00:32:50,763 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,764 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,764 main - Building LoadPlan...
+06 ноя 2016 00:32:50,764 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,765 main - LoadPlan(entity=ProjectSystem.model.Project)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Project, querySpaceUid=<gen:0>, path=ProjectSystem.model.Project)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Project)
+          - SQL table alias mapping - project0_
+          - alias suffix - 0_
+          - suffixed key columns - {projectI1_1_0_}
+
+06 ноя 2016 00:32:50,765 main - Static select for entity ProjectSystem.model.Project [FORCE]: select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=? for update
+06 ноя 2016 00:32:50,766 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@238d68ff]
+06 ноя 2016 00:32:50,766 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,766 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,766 main - Building LoadPlan...
+06 ноя 2016 00:32:50,767 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,768 main - LoadPlan(entity=ProjectSystem.model.Project)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Project, querySpaceUid=<gen:0>, path=ProjectSystem.model.Project)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Project)
+          - SQL table alias mapping - project0_
+          - alias suffix - 0_
+          - suffixed key columns - {projectI1_1_0_}
+
+06 ноя 2016 00:32:50,768 main - Static select for entity ProjectSystem.model.Project [PESSIMISTIC_READ]: select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=? lock in share mode
+06 ноя 2016 00:32:50,769 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5852c06f]
+06 ноя 2016 00:32:50,769 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,769 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,769 main - Building LoadPlan...
+06 ноя 2016 00:32:50,770 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,771 main - LoadPlan(entity=ProjectSystem.model.Project)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Project, querySpaceUid=<gen:0>, path=ProjectSystem.model.Project)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Project)
+          - SQL table alias mapping - project0_
+          - alias suffix - 0_
+          - suffixed key columns - {projectI1_1_0_}
+
+06 ноя 2016 00:32:50,771 main - Static select for entity ProjectSystem.model.Project [PESSIMISTIC_WRITE]: select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=? for update
+06 ноя 2016 00:32:50,772 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@9cb8225]
+06 ноя 2016 00:32:50,773 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,773 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,773 main - Building LoadPlan...
+06 ноя 2016 00:32:50,774 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,775 main - LoadPlan(entity=ProjectSystem.model.Project)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Project, querySpaceUid=<gen:0>, path=ProjectSystem.model.Project)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Project)
+          - SQL table alias mapping - project0_
+          - alias suffix - 0_
+          - suffixed key columns - {projectI1_1_0_}
+
+06 ноя 2016 00:32:50,775 main - Static select for entity ProjectSystem.model.Project [PESSIMISTIC_FORCE_INCREMENT]: select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=? for update
+06 ноя 2016 00:32:50,776 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@38af9828]
+06 ноя 2016 00:32:50,776 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,776 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,776 main - Building LoadPlan...
+06 ноя 2016 00:32:50,777 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,778 main - LoadPlan(entity=ProjectSystem.model.Project)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Project, querySpaceUid=<gen:0>, path=ProjectSystem.model.Project)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Project)
+          - SQL table alias mapping - project0_
+          - alias suffix - 0_
+          - suffixed key columns - {projectI1_1_0_}
+
+06 ноя 2016 00:32:50,778 main - Static select for entity ProjectSystem.model.Project [OPTIMISTIC]: select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=?
+06 ноя 2016 00:32:50,779 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@62656be4]
+06 ноя 2016 00:32:50,779 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,779 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,780 main - Building LoadPlan...
+06 ноя 2016 00:32:50,782 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,783 main - LoadPlan(entity=ProjectSystem.model.Project)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Project, querySpaceUid=<gen:0>, path=ProjectSystem.model.Project)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Project)
+          - SQL table alias mapping - project0_
+          - alias suffix - 0_
+          - suffixed key columns - {projectI1_1_0_}
+
+06 ноя 2016 00:32:50,783 main - Static select for entity ProjectSystem.model.Project [OPTIMISTIC_FORCE_INCREMENT]: select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=?
+06 ноя 2016 00:32:50,845 main - Static select for action ACTION_MERGE on entity ProjectSystem.model.Project: select project0_.projectID as projectI1_1_1_, project0_.name as name2_1_1_, teams1_.projectID as projectI1_1_3_, team2_.teamID as teamID2_2_3_, team2_.teamID as teamID1_3_0_, team2_.name as name2_3_0_ from projects project0_ left outer join projects_teams teams1_ on project0_.projectID=teams1_.projectID left outer join teams team2_ on teams1_.teamID=team2_.teamID where project0_.projectID=?
+06 ноя 2016 00:32:50,847 main - Static select for action ACTION_REFRESH on entity ProjectSystem.model.Project: select project0_.projectID as projectI1_1_1_, project0_.name as name2_1_1_, teams1_.projectID as projectI1_1_3_, team2_.teamID as teamID2_2_3_, team2_.teamID as teamID1_3_0_, team2_.name as name2_3_0_ from projects project0_ left outer join projects_teams teams1_ on project0_.projectID=teams1_.projectID left outer join teams team2_ on teams1_.teamID=team2_.teamID where project0_.projectID=?
+06 ноя 2016 00:32:50,848 main - Static SQL for entity: ProjectSystem.model.Developer
+06 ноя 2016 00:32:50,848 main -  Version select: select developerID from developers where developerID =?
+06 ноя 2016 00:32:50,848 main -  Snapshot select: select developer_.developerID, developer_.name as name2_0_ from developers developer_ where developer_.developerID=?
+06 ноя 2016 00:32:50,849 main -  Insert 0: insert into developers (name, developerID) values (?, ?)
+06 ноя 2016 00:32:50,849 main -  Update 0: update developers set name=? where developerID=?
+06 ноя 2016 00:32:50,849 main -  Delete 0: delete from developers where developerID=?
+06 ноя 2016 00:32:50,849 main -  Identity insert: insert into developers (name) values (?)
+06 ноя 2016 00:32:50,849 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@15f47664]
+06 ноя 2016 00:32:50,850 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,850 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,850 main - Building LoadPlan...
+06 ноя 2016 00:32:50,851 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,852 main - LoadPlan(entity=ProjectSystem.model.Developer)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Developer, querySpaceUid=<gen:0>, path=ProjectSystem.model.Developer)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Developer)
+          - SQL table alias mapping - developer0_
+          - alias suffix - 0_
+          - suffixed key columns - {develope1_0_0_}
+
+06 ноя 2016 00:32:50,853 main - Static select for entity ProjectSystem.model.Developer [NONE]: select developer0_.developerID as develope1_0_0_, developer0_.name as name2_0_0_ from developers developer0_ where developer0_.developerID=?
+06 ноя 2016 00:32:50,853 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@dc9876b]
+06 ноя 2016 00:32:50,853 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,854 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,854 main - Building LoadPlan...
+06 ноя 2016 00:32:50,854 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,856 main - LoadPlan(entity=ProjectSystem.model.Developer)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Developer, querySpaceUid=<gen:0>, path=ProjectSystem.model.Developer)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Developer)
+          - SQL table alias mapping - developer0_
+          - alias suffix - 0_
+          - suffixed key columns - {develope1_0_0_}
+
+06 ноя 2016 00:32:50,856 main - Static select for entity ProjectSystem.model.Developer [READ]: select developer0_.developerID as develope1_0_0_, developer0_.name as name2_0_0_ from developers developer0_ where developer0_.developerID=?
+06 ноя 2016 00:32:50,856 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@19976a65]
+06 ноя 2016 00:32:50,857 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,857 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,857 main - Building LoadPlan...
+06 ноя 2016 00:32:50,858 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,859 main - LoadPlan(entity=ProjectSystem.model.Developer)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Developer, querySpaceUid=<gen:0>, path=ProjectSystem.model.Developer)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Developer)
+          - SQL table alias mapping - developer0_
+          - alias suffix - 0_
+          - suffixed key columns - {develope1_0_0_}
+
+06 ноя 2016 00:32:50,859 main - Static select for entity ProjectSystem.model.Developer [UPGRADE]: select developer0_.developerID as develope1_0_0_, developer0_.name as name2_0_0_ from developers developer0_ where developer0_.developerID=? for update
+06 ноя 2016 00:32:50,859 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4b2c5e02]
+06 ноя 2016 00:32:50,859 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,860 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,860 main - Building LoadPlan...
+06 ноя 2016 00:32:50,860 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,861 main - LoadPlan(entity=ProjectSystem.model.Developer)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Developer, querySpaceUid=<gen:0>, path=ProjectSystem.model.Developer)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Developer)
+          - SQL table alias mapping - developer0_
+          - alias suffix - 0_
+          - suffixed key columns - {develope1_0_0_}
+
+06 ноя 2016 00:32:50,862 main - Static select for entity ProjectSystem.model.Developer [UPGRADE_NOWAIT]: select developer0_.developerID as develope1_0_0_, developer0_.name as name2_0_0_ from developers developer0_ where developer0_.developerID=? for update
+06 ноя 2016 00:32:50,862 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@75c56eb9]
+06 ноя 2016 00:32:50,862 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,863 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,863 main - Building LoadPlan...
+06 ноя 2016 00:32:50,863 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,865 main - LoadPlan(entity=ProjectSystem.model.Developer)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Developer, querySpaceUid=<gen:0>, path=ProjectSystem.model.Developer)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Developer)
+          - SQL table alias mapping - developer0_
+          - alias suffix - 0_
+          - suffixed key columns - {develope1_0_0_}
+
+06 ноя 2016 00:32:50,865 main - Static select for entity ProjectSystem.model.Developer [UPGRADE_SKIPLOCKED]: select developer0_.developerID as develope1_0_0_, developer0_.name as name2_0_0_ from developers developer0_ where developer0_.developerID=? for update
+06 ноя 2016 00:32:50,865 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2dc9b0f5]
+06 ноя 2016 00:32:50,865 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,866 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,866 main - Building LoadPlan...
+06 ноя 2016 00:32:50,866 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,868 main - LoadPlan(entity=ProjectSystem.model.Developer)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Developer, querySpaceUid=<gen:0>, path=ProjectSystem.model.Developer)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Developer)
+          - SQL table alias mapping - developer0_
+          - alias suffix - 0_
+          - suffixed key columns - {develope1_0_0_}
+
+06 ноя 2016 00:32:50,868 main - Static select for entity ProjectSystem.model.Developer [FORCE]: select developer0_.developerID as develope1_0_0_, developer0_.name as name2_0_0_ from developers developer0_ where developer0_.developerID=? for update
+06 ноя 2016 00:32:50,868 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3b5fad2d]
+06 ноя 2016 00:32:50,869 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,869 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,869 main - Building LoadPlan...
+06 ноя 2016 00:32:50,870 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,871 main - LoadPlan(entity=ProjectSystem.model.Developer)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Developer, querySpaceUid=<gen:0>, path=ProjectSystem.model.Developer)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Developer)
+          - SQL table alias mapping - developer0_
+          - alias suffix - 0_
+          - suffixed key columns - {develope1_0_0_}
+
+06 ноя 2016 00:32:50,871 main - Static select for entity ProjectSystem.model.Developer [PESSIMISTIC_READ]: select developer0_.developerID as develope1_0_0_, developer0_.name as name2_0_0_ from developers developer0_ where developer0_.developerID=? lock in share mode
+06 ноя 2016 00:32:50,871 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3eb91815]
+06 ноя 2016 00:32:50,872 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,872 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,872 main - Building LoadPlan...
+06 ноя 2016 00:32:50,873 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,874 main - LoadPlan(entity=ProjectSystem.model.Developer)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Developer, querySpaceUid=<gen:0>, path=ProjectSystem.model.Developer)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Developer)
+          - SQL table alias mapping - developer0_
+          - alias suffix - 0_
+          - suffixed key columns - {develope1_0_0_}
+
+06 ноя 2016 00:32:50,874 main - Static select for entity ProjectSystem.model.Developer [PESSIMISTIC_WRITE]: select developer0_.developerID as develope1_0_0_, developer0_.name as name2_0_0_ from developers developer0_ where developer0_.developerID=? for update
+06 ноя 2016 00:32:50,875 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@102cec62]
+06 ноя 2016 00:32:50,875 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,875 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,875 main - Building LoadPlan...
+06 ноя 2016 00:32:50,876 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,877 main - LoadPlan(entity=ProjectSystem.model.Developer)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Developer, querySpaceUid=<gen:0>, path=ProjectSystem.model.Developer)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Developer)
+          - SQL table alias mapping - developer0_
+          - alias suffix - 0_
+          - suffixed key columns - {develope1_0_0_}
+
+06 ноя 2016 00:32:50,877 main - Static select for entity ProjectSystem.model.Developer [PESSIMISTIC_FORCE_INCREMENT]: select developer0_.developerID as develope1_0_0_, developer0_.name as name2_0_0_ from developers developer0_ where developer0_.developerID=? for update
+06 ноя 2016 00:32:50,877 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@27912e3]
+06 ноя 2016 00:32:50,878 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,878 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,878 main - Building LoadPlan...
+06 ноя 2016 00:32:50,879 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,880 main - LoadPlan(entity=ProjectSystem.model.Developer)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Developer, querySpaceUid=<gen:0>, path=ProjectSystem.model.Developer)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Developer)
+          - SQL table alias mapping - developer0_
+          - alias suffix - 0_
+          - suffixed key columns - {develope1_0_0_}
+
+06 ноя 2016 00:32:50,880 main - Static select for entity ProjectSystem.model.Developer [OPTIMISTIC]: select developer0_.developerID as develope1_0_0_, developer0_.name as name2_0_0_ from developers developer0_ where developer0_.developerID=?
+06 ноя 2016 00:32:50,880 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@43015c69]
+06 ноя 2016 00:32:50,881 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,881 main - Visiting attribute path : teams
+06 ноя 2016 00:32:50,881 main - Building LoadPlan...
+06 ноя 2016 00:32:50,882 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,883 main - LoadPlan(entity=ProjectSystem.model.Developer)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Developer, querySpaceUid=<gen:0>, path=ProjectSystem.model.Developer)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Developer)
+          - SQL table alias mapping - developer0_
+          - alias suffix - 0_
+          - suffixed key columns - {develope1_0_0_}
+
+06 ноя 2016 00:32:50,883 main - Static select for entity ProjectSystem.model.Developer [OPTIMISTIC_FORCE_INCREMENT]: select developer0_.developerID as develope1_0_0_, developer0_.name as name2_0_0_ from developers developer0_ where developer0_.developerID=?
+06 ноя 2016 00:32:50,884 main - Static select for action ACTION_MERGE on entity ProjectSystem.model.Developer: select developer0_.developerID as develope1_0_0_, developer0_.name as name2_0_0_ from developers developer0_ where developer0_.developerID=?
+06 ноя 2016 00:32:50,885 main - Static select for action ACTION_REFRESH on entity ProjectSystem.model.Developer: select developer0_.developerID as develope1_0_0_, developer0_.name as name2_0_0_ from developers developer0_ where developer0_.developerID=?
+06 ноя 2016 00:32:50,885 main - Static SQL for entity: ProjectSystem.model.Team
+06 ноя 2016 00:32:50,885 main -  Version select: select teamID from teams where teamID =?
+06 ноя 2016 00:32:50,886 main -  Snapshot select: select team_.teamID, team_.name as name2_3_ from teams team_ where team_.teamID=?
+06 ноя 2016 00:32:50,886 main -  Insert 0: insert into teams (name, teamID) values (?, ?)
+06 ноя 2016 00:32:50,886 main -  Update 0: update teams set name=? where teamID=?
+06 ноя 2016 00:32:50,886 main -  Delete 0: delete from teams where teamID=?
+06 ноя 2016 00:32:50,886 main -  Identity insert: insert into teams (name) values (?)
+06 ноя 2016 00:32:50,887 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4bbf6d0e]
+06 ноя 2016 00:32:50,887 main - Visiting attribute path : developers
+06 ноя 2016 00:32:50,887 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,887 main - Visiting attribute path : projects
+06 ноя 2016 00:32:50,888 main - Building LoadPlan...
+06 ноя 2016 00:32:50,888 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,889 main - LoadPlan(entity=ProjectSystem.model.Team)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Team, querySpaceUid=<gen:0>, path=ProjectSystem.model.Team)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Team)
+          - SQL table alias mapping - team0_
+          - alias suffix - 0_
+          - suffixed key columns - {teamID1_3_0_}
+
+06 ноя 2016 00:32:50,890 main - Static select for entity ProjectSystem.model.Team [NONE]: select team0_.teamID as teamID1_3_0_, team0_.name as name2_3_0_ from teams team0_ where team0_.teamID=?
+06 ноя 2016 00:32:50,890 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@791d1f8b]
+06 ноя 2016 00:32:50,891 main - Visiting attribute path : developers
+06 ноя 2016 00:32:50,891 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,891 main - Visiting attribute path : projects
+06 ноя 2016 00:32:50,891 main - Building LoadPlan...
+06 ноя 2016 00:32:50,892 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,893 main - LoadPlan(entity=ProjectSystem.model.Team)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Team, querySpaceUid=<gen:0>, path=ProjectSystem.model.Team)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Team)
+          - SQL table alias mapping - team0_
+          - alias suffix - 0_
+          - suffixed key columns - {teamID1_3_0_}
+
+06 ноя 2016 00:32:50,893 main - Static select for entity ProjectSystem.model.Team [READ]: select team0_.teamID as teamID1_3_0_, team0_.name as name2_3_0_ from teams team0_ where team0_.teamID=?
+06 ноя 2016 00:32:50,894 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@14f232c4]
+06 ноя 2016 00:32:50,894 main - Visiting attribute path : developers
+06 ноя 2016 00:32:50,894 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,894 main - Visiting attribute path : projects
+06 ноя 2016 00:32:50,894 main - Building LoadPlan...
+06 ноя 2016 00:32:50,895 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,896 main - LoadPlan(entity=ProjectSystem.model.Team)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Team, querySpaceUid=<gen:0>, path=ProjectSystem.model.Team)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Team)
+          - SQL table alias mapping - team0_
+          - alias suffix - 0_
+          - suffixed key columns - {teamID1_3_0_}
+
+06 ноя 2016 00:32:50,896 main - Static select for entity ProjectSystem.model.Team [UPGRADE]: select team0_.teamID as teamID1_3_0_, team0_.name as name2_3_0_ from teams team0_ where team0_.teamID=? for update
+06 ноя 2016 00:32:50,911 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@24c22fe]
+06 ноя 2016 00:32:50,912 main - Visiting attribute path : developers
+06 ноя 2016 00:32:50,912 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,913 main - Visiting attribute path : projects
+06 ноя 2016 00:32:50,913 main - Building LoadPlan...
+06 ноя 2016 00:32:50,914 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,915 main - LoadPlan(entity=ProjectSystem.model.Team)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Team, querySpaceUid=<gen:0>, path=ProjectSystem.model.Team)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Team)
+          - SQL table alias mapping - team0_
+          - alias suffix - 0_
+          - suffixed key columns - {teamID1_3_0_}
+
+06 ноя 2016 00:32:50,915 main - Static select for entity ProjectSystem.model.Team [UPGRADE_NOWAIT]: select team0_.teamID as teamID1_3_0_, team0_.name as name2_3_0_ from teams team0_ where team0_.teamID=? for update
+06 ноя 2016 00:32:50,916 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@cd1e646]
+06 ноя 2016 00:32:50,916 main - Visiting attribute path : developers
+06 ноя 2016 00:32:50,916 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,916 main - Visiting attribute path : projects
+06 ноя 2016 00:32:50,917 main - Building LoadPlan...
+06 ноя 2016 00:32:50,917 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,918 main - LoadPlan(entity=ProjectSystem.model.Team)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Team, querySpaceUid=<gen:0>, path=ProjectSystem.model.Team)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Team)
+          - SQL table alias mapping - team0_
+          - alias suffix - 0_
+          - suffixed key columns - {teamID1_3_0_}
+
+06 ноя 2016 00:32:50,919 main - Static select for entity ProjectSystem.model.Team [UPGRADE_SKIPLOCKED]: select team0_.teamID as teamID1_3_0_, team0_.name as name2_3_0_ from teams team0_ where team0_.teamID=? for update
+06 ноя 2016 00:32:50,919 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1890516e]
+06 ноя 2016 00:32:50,920 main - Visiting attribute path : developers
+06 ноя 2016 00:32:50,920 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,920 main - Visiting attribute path : projects
+06 ноя 2016 00:32:50,920 main - Building LoadPlan...
+06 ноя 2016 00:32:50,921 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,929 main - LoadPlan(entity=ProjectSystem.model.Team)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Team, querySpaceUid=<gen:0>, path=ProjectSystem.model.Team)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Team)
+          - SQL table alias mapping - team0_
+          - alias suffix - 0_
+          - suffixed key columns - {teamID1_3_0_}
+
+06 ноя 2016 00:32:50,930 main - Static select for entity ProjectSystem.model.Team [FORCE]: select team0_.teamID as teamID1_3_0_, team0_.name as name2_3_0_ from teams team0_ where team0_.teamID=? for update
+06 ноя 2016 00:32:50,930 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@16c069df]
+06 ноя 2016 00:32:50,931 main - Visiting attribute path : developers
+06 ноя 2016 00:32:50,931 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,931 main - Visiting attribute path : projects
+06 ноя 2016 00:32:50,937 main - Building LoadPlan...
+06 ноя 2016 00:32:50,938 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,943 main - LoadPlan(entity=ProjectSystem.model.Team)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Team, querySpaceUid=<gen:0>, path=ProjectSystem.model.Team)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Team)
+          - SQL table alias mapping - team0_
+          - alias suffix - 0_
+          - suffixed key columns - {teamID1_3_0_}
+
+06 ноя 2016 00:32:50,944 main - Static select for entity ProjectSystem.model.Team [PESSIMISTIC_READ]: select team0_.teamID as teamID1_3_0_, team0_.name as name2_3_0_ from teams team0_ where team0_.teamID=? lock in share mode
+06 ноя 2016 00:32:50,945 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@31edaa7d]
+06 ноя 2016 00:32:50,945 main - Visiting attribute path : developers
+06 ноя 2016 00:32:50,945 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,945 main - Visiting attribute path : projects
+06 ноя 2016 00:32:50,946 main - Building LoadPlan...
+06 ноя 2016 00:32:50,946 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,948 main - LoadPlan(entity=ProjectSystem.model.Team)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Team, querySpaceUid=<gen:0>, path=ProjectSystem.model.Team)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Team)
+          - SQL table alias mapping - team0_
+          - alias suffix - 0_
+          - suffixed key columns - {teamID1_3_0_}
+
+06 ноя 2016 00:32:50,948 main - Static select for entity ProjectSystem.model.Team [PESSIMISTIC_WRITE]: select team0_.teamID as teamID1_3_0_, team0_.name as name2_3_0_ from teams team0_ where team0_.teamID=? for update
+06 ноя 2016 00:32:50,948 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3336e6b6]
+06 ноя 2016 00:32:50,949 main - Visiting attribute path : developers
+06 ноя 2016 00:32:50,949 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,949 main - Visiting attribute path : projects
+06 ноя 2016 00:32:50,949 main - Building LoadPlan...
+06 ноя 2016 00:32:50,950 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,951 main - LoadPlan(entity=ProjectSystem.model.Team)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Team, querySpaceUid=<gen:0>, path=ProjectSystem.model.Team)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Team)
+          - SQL table alias mapping - team0_
+          - alias suffix - 0_
+          - suffixed key columns - {teamID1_3_0_}
+
+06 ноя 2016 00:32:50,951 main - Static select for entity ProjectSystem.model.Team [PESSIMISTIC_FORCE_INCREMENT]: select team0_.teamID as teamID1_3_0_, team0_.name as name2_3_0_ from teams team0_ where team0_.teamID=? for update
+06 ноя 2016 00:32:50,951 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@205d38da]
+06 ноя 2016 00:32:50,952 main - Visiting attribute path : developers
+06 ноя 2016 00:32:50,952 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,952 main - Visiting attribute path : projects
+06 ноя 2016 00:32:50,952 main - Building LoadPlan...
+06 ноя 2016 00:32:50,953 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,954 main - LoadPlan(entity=ProjectSystem.model.Team)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Team, querySpaceUid=<gen:0>, path=ProjectSystem.model.Team)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Team)
+          - SQL table alias mapping - team0_
+          - alias suffix - 0_
+          - suffixed key columns - {teamID1_3_0_}
+
+06 ноя 2016 00:32:50,954 main - Static select for entity ProjectSystem.model.Team [OPTIMISTIC]: select team0_.teamID as teamID1_3_0_, team0_.name as name2_3_0_ from teams team0_ where team0_.teamID=?
+06 ноя 2016 00:32:50,956 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6dd7b5a3]
+06 ноя 2016 00:32:50,956 main - Visiting attribute path : developers
+06 ноя 2016 00:32:50,956 main - Visiting attribute path : name
+06 ноя 2016 00:32:50,956 main - Visiting attribute path : projects
+06 ноя 2016 00:32:50,956 main - Building LoadPlan...
+06 ноя 2016 00:32:50,957 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:50,962 main - LoadPlan(entity=ProjectSystem.model.Team)
+    - Returns
+       - EntityReturnImpl(entity=ProjectSystem.model.Team, querySpaceUid=<gen:0>, path=ProjectSystem.model.Team)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ProjectSystem.model.Team)
+          - SQL table alias mapping - team0_
+          - alias suffix - 0_
+          - suffixed key columns - {teamID1_3_0_}
+
+06 ноя 2016 00:32:50,963 main - Static select for entity ProjectSystem.model.Team [OPTIMISTIC_FORCE_INCREMENT]: select team0_.teamID as teamID1_3_0_, team0_.name as name2_3_0_ from teams team0_ where team0_.teamID=?
+06 ноя 2016 00:32:50,964 main - Static select for action ACTION_MERGE on entity ProjectSystem.model.Team: select team0_.teamID as teamID1_3_1_, team0_.name as name2_3_1_, developers1_.teamID as teamID1_3_3_, developer2_.developerID as develope2_4_3_, developer2_.developerID as develope1_0_0_, developer2_.name as name2_0_0_ from teams team0_ left outer join teams_developers developers1_ on team0_.teamID=developers1_.teamID left outer join developers developer2_ on developers1_.developerID=developer2_.developerID where team0_.teamID=?
+06 ноя 2016 00:32:50,966 main - Static select for action ACTION_REFRESH on entity ProjectSystem.model.Team: select team0_.teamID as teamID1_3_1_, team0_.name as name2_3_1_, developers1_.teamID as teamID1_3_3_, developer2_.developerID as develope2_4_3_, developer2_.developerID as develope1_0_0_, developer2_.name as name2_0_0_ from teams team0_ left outer join teams_developers developers1_ on team0_.teamID=developers1_.teamID left outer join developers developer2_ on developers1_.developerID=developer2_.developerID where team0_.teamID=?
+06 ноя 2016 00:32:50,993 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@3116c353]
+06 ноя 2016 00:32:50,997 main - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2e32ccc5]
+06 ноя 2016 00:32:51,004 main - Visiting attribute path : developers
+06 ноя 2016 00:32:51,004 main - Property path deemed to be circular : developers
+06 ноя 2016 00:32:51,004 main - Visiting attribute path : name
+06 ноя 2016 00:32:51,004 main - Visiting attribute path : projects
+06 ноя 2016 00:32:51,005 main - Building LoadPlan...
+06 ноя 2016 00:32:51,015 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:51,020 main - LoadPlan(collection=ProjectSystem.model.Developer.teams)
+    - Returns
+       - CollectionReturnImpl(collection=ProjectSystem.model.Developer.teams, querySpaceUid=<gen:0>, path=[ProjectSystem.model.Developer.teams])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=ProjectSystem.model.Team, querySpaceUid=<gen:1>, path=[ProjectSystem.model.Developer.teams].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=ProjectSystem.model.Developer.teams)
+          - SQL table alias mapping - teams0_
+          - alias suffix - 0_
+          - suffixed key columns - {develope2_0_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - teamID1_3_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=ProjectSystem.model.Team)
+                - SQL table alias mapping - team1_
+                - alias suffix - 1_
+                - suffixed key columns - {teamID1_3_1_}
+
+06 ноя 2016 00:32:51,022 main - Static select for collection ProjectSystem.model.Developer.teams: select teams0_.developerID as develope2_0_0_, teams0_.teamID as teamID1_4_0_, team1_.teamID as teamID1_3_1_, team1_.name as name2_3_1_ from teams_developers teams0_ inner join teams team1_ on teams0_.teamID=team1_.teamID where teams0_.developerID=?
+06 ноя 2016 00:32:51,023 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@14a50707]
+06 ноя 2016 00:32:51,023 main - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4d518b32]
+06 ноя 2016 00:32:51,024 main - Visiting attribute path : name
+06 ноя 2016 00:32:51,024 main - Visiting attribute path : teams
+06 ноя 2016 00:32:51,024 main - Property path deemed to be circular : teams
+06 ноя 2016 00:32:51,024 main - Building LoadPlan...
+06 ноя 2016 00:32:51,025 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:51,027 main - LoadPlan(collection=ProjectSystem.model.Team.developers)
+    - Returns
+       - CollectionReturnImpl(collection=ProjectSystem.model.Team.developers, querySpaceUid=<gen:0>, path=[ProjectSystem.model.Team.developers])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=ProjectSystem.model.Developer, querySpaceUid=<gen:1>, path=[ProjectSystem.model.Team.developers].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=ProjectSystem.model.Team.developers)
+          - SQL table alias mapping - developers0_
+          - alias suffix - 0_
+          - suffixed key columns - {teamID1_3_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - develope1_0_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=ProjectSystem.model.Developer)
+                - SQL table alias mapping - developer1_
+                - alias suffix - 1_
+                - suffixed key columns - {develope1_0_1_}
+
+06 ноя 2016 00:32:51,027 main - Static select for collection ProjectSystem.model.Team.developers: select developers0_.teamID as teamID1_3_0_, developers0_.developerID as develope2_4_0_, developer1_.developerID as develope1_0_1_, developer1_.name as name2_0_1_ from teams_developers developers0_ inner join developers developer1_ on developers0_.developerID=developer1_.developerID where developers0_.teamID=?
+06 ноя 2016 00:32:51,027 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@329dbdbf]
+06 ноя 2016 00:32:51,028 main - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7354b8c5]
+06 ноя 2016 00:32:51,028 main - Visiting attribute path : developers
+06 ноя 2016 00:32:51,028 main - Visiting attribute path : name
+06 ноя 2016 00:32:51,028 main - Visiting attribute path : projects
+06 ноя 2016 00:32:51,028 main - Property path deemed to be circular : projects
+06 ноя 2016 00:32:51,028 main - Building LoadPlan...
+06 ноя 2016 00:32:51,029 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:51,030 main - LoadPlan(collection=ProjectSystem.model.Project.teams)
+    - Returns
+       - CollectionReturnImpl(collection=ProjectSystem.model.Project.teams, querySpaceUid=<gen:0>, path=[ProjectSystem.model.Project.teams])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=ProjectSystem.model.Team, querySpaceUid=<gen:1>, path=[ProjectSystem.model.Project.teams].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=ProjectSystem.model.Project.teams)
+          - SQL table alias mapping - teams0_
+          - alias suffix - 0_
+          - suffixed key columns - {projectI1_1_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - teamID1_3_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=ProjectSystem.model.Team)
+                - SQL table alias mapping - team1_
+                - alias suffix - 1_
+                - suffixed key columns - {teamID1_3_1_}
+
+06 ноя 2016 00:32:51,030 main - Static select for collection ProjectSystem.model.Project.teams: select teams0_.projectID as projectI1_1_0_, teams0_.teamID as teamID2_2_0_, team1_.teamID as teamID1_3_1_, team1_.name as name2_3_1_ from projects_teams teams0_ inner join teams team1_ on teams0_.teamID=team1_.teamID where teams0_.projectID=?
+06 ноя 2016 00:32:51,030 main - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@11d8ae8b]
+06 ноя 2016 00:32:51,031 main - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@479cbee5]
+06 ноя 2016 00:32:51,031 main - Visiting attribute path : name
+06 ноя 2016 00:32:51,031 main - Visiting attribute path : teams
+06 ноя 2016 00:32:51,031 main - Property path deemed to be circular : teams
+06 ноя 2016 00:32:51,031 main - Building LoadPlan...
+06 ноя 2016 00:32:51,032 main - processing queryspace <gen:0>
+06 ноя 2016 00:32:51,033 main - LoadPlan(collection=ProjectSystem.model.Team.projects)
+    - Returns
+       - CollectionReturnImpl(collection=ProjectSystem.model.Team.projects, querySpaceUid=<gen:0>, path=[ProjectSystem.model.Team.projects])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=ProjectSystem.model.Project, querySpaceUid=<gen:1>, path=[ProjectSystem.model.Team.projects].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=ProjectSystem.model.Team.projects)
+          - SQL table alias mapping - projects0_
+          - alias suffix - 0_
+          - suffixed key columns - {teamID2_3_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - projectI1_1_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=ProjectSystem.model.Project)
+                - SQL table alias mapping - project1_
+                - alias suffix - 1_
+                - suffixed key columns - {projectI1_1_1_}
+
+06 ноя 2016 00:32:51,033 main - Static select for collection ProjectSystem.model.Team.projects: select projects0_.teamID as teamID2_3_0_, projects0_.projectID as projectI1_2_0_, project1_.projectID as projectI1_1_1_, project1_.name as name2_1_1_ from projects_teams projects0_ inner join projects project1_ on projects0_.projectID=project1_.projectID where projects0_.teamID=?
+06 ноя 2016 00:32:51,042 main - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@5a37d3ed
+06 ноя 2016 00:32:51,048 main - Registering SessionFactory: 0f96b1c2-22d5-4baf-99cf-26a209602509 (<unnamed>)
+06 ноя 2016 00:32:51,048 main - Not binding SessionFactory to JNDI, no JNDI name configured
+06 ноя 2016 00:32:51,048 main - Instantiated session factory
+06 ноя 2016 00:32:51,050 main - Checking 0 named HQL queries
+06 ноя 2016 00:32:51,050 main - Checking 0 named SQL queries
+06 ноя 2016 00:32:51,066 main - Statistics initialized [enabled=false]
+06 ноя 2016 00:33:06,483 main - begin
+06 ноя 2016 00:33:06,484 main - Obtaining JDBC connection
+06 ноя 2016 00:33:06,485 main - Obtained JDBC connection
+06 ноя 2016 00:33:06,485 main - initial autocommit status: false
+06 ноя 2016 00:33:06,628 main - Initializing proxy: [ProjectSystem.model.Project#5555555]
+06 ноя 2016 00:33:06,655 main - select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=?
+06 ноя 2016 00:33:06,791 main - Done entity load : ProjectSystem.model.Project#5555555
+06 ноя 2016 00:33:14,414 main - parse() - HQL: FROM ProjectSystem.model.Project
+06 ноя 2016 00:33:14,446 main - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    \-[SELECT_FROM] Node: 'SELECT_FROM'
+       \-[FROM] Node: 'FROM'
+          \-[RANGE] Node: 'RANGE'
+             \-[DOT] Node: '.'
+                +-[DOT] Node: '.'
+                |  +-[IDENT] Node: 'ProjectSystem'
+                |  \-[IDENT] Node: 'model'
+                \-[IDENT] Node: 'Project'
+
+06 ноя 2016 00:33:14,446 main - throwQueryException() : no errors
+06 ноя 2016 00:33:14,528 main - select << begin [level=1, statement=select]
+06 ноя 2016 00:33:14,577 main - FromClause{level=1} : ProjectSystem.model.Project (<no alias>) -> project0_
+06 ноя 2016 00:33:14,578 main - select : finishing up [level=1, statement=select]
+06 ноя 2016 00:33:14,578 main - processQuery() :  ( SELECT ( FromClause{level=1} projects project0_ ) )
+06 ноя 2016 00:33:14,595 main - Derived SELECT clause created.
+06 ноя 2016 00:33:14,611 main - Using FROM fragment [projects project0_]
+06 ноя 2016 00:33:14,612 main - select >> end [level=1, statement=select]
+06 ноя 2016 00:33:14,614 main - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (projects)
+    +-[SELECT_CLAUSE] SelectClause: '{derived select clause}'
+    |  +-[SELECT_EXPR] SelectExpressionImpl: 'project0_.projectID as projectI1_1_' {FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=projects,tableAlias=project0_,origin=null,columns={,className=ProjectSystem.model.Project}}}
+    |  \-[SQL_TOKEN] SqlFragment: 'project0_.name as name2_1_'
+    \-[FROM] FromClause: 'FROM' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[], fromElementByTableAlias=[project0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+       \-[FROM_FRAGMENT] FromElement: 'projects project0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=projects,tableAlias=project0_,origin=null,columns={,className=ProjectSystem.model.Project}}
+
+06 ноя 2016 00:33:14,614 main - throwQueryException() : no errors
+06 ноя 2016 00:33:14,650 main - HQL: FROM ProjectSystem.model.Project
+06 ноя 2016 00:33:14,650 main - SQL: select project0_.projectID as projectI1_1_, project0_.name as name2_1_ from projects project0_
+06 ноя 2016 00:33:14,650 main - throwQueryException() : no errors
+06 ноя 2016 00:33:14,685 main - select project0_.projectID as projectI1_1_, project0_.name as name2_1_ from projects project0_
+06 ноя 2016 00:33:14,686 main - Obtaining JDBC connection
+06 ноя 2016 00:33:14,703 main - Obtained JDBC connection
+06 ноя 2016 00:33:14,709 main - Result set row: 0
+06 ноя 2016 00:33:14,714 main - Result row: EntityKey[ProjectSystem.model.Project#1]
+06 ноя 2016 00:33:14,732 main - Result set row: 1
+06 ноя 2016 00:33:14,732 main - Result row: EntityKey[ProjectSystem.model.Project#2]
+06 ноя 2016 00:33:14,734 main - Result set row: 2
+06 ноя 2016 00:33:14,734 main - Result row: EntityKey[ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:14,735 main - Resolving associations for [ProjectSystem.model.Project#1]
+06 ноя 2016 00:33:14,769 main - Done materializing entity [ProjectSystem.model.Project#1]
+06 ноя 2016 00:33:14,769 main - Resolving associations for [ProjectSystem.model.Project#2]
+06 ноя 2016 00:33:14,770 main - Done materializing entity [ProjectSystem.model.Project#2]
+06 ноя 2016 00:33:14,770 main - Resolving associations for [ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:14,770 main - Done materializing entity [ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:14,783 main - Loading collection: [ProjectSystem.model.Project.teams#1]
+06 ноя 2016 00:33:14,783 main - select teams0_.projectID as projectI1_1_0_, teams0_.teamID as teamID2_2_0_, team1_.teamID as teamID1_3_1_, team1_.name as name2_3_1_ from projects_teams teams0_ inner join teams team1_ on teams0_.teamID=team1_.teamID where teams0_.projectID=?
+06 ноя 2016 00:33:14,786 main - Preparing collection intializer : [ProjectSystem.model.Project.teams#1]
+06 ноя 2016 00:33:14,795 main - 1 collections were found in result set for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:14,796 main - Collection fully initialized: [ProjectSystem.model.Project.teams#1]
+06 ноя 2016 00:33:14,797 main - 1 collections initialized for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:14,798 main - Done loading collection
+06 ноя 2016 00:33:14,801 main - Loading collection: [ProjectSystem.model.Project.teams#2]
+06 ноя 2016 00:33:14,802 main - select teams0_.projectID as projectI1_1_0_, teams0_.teamID as teamID2_2_0_, team1_.teamID as teamID1_3_1_, team1_.name as name2_3_1_ from projects_teams teams0_ inner join teams team1_ on teams0_.teamID=team1_.teamID where teams0_.projectID=?
+06 ноя 2016 00:33:14,805 main - Preparing collection intializer : [ProjectSystem.model.Project.teams#2]
+06 ноя 2016 00:33:14,806 main - 1 collections were found in result set for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:14,806 main - Collection fully initialized: [ProjectSystem.model.Project.teams#2]
+06 ноя 2016 00:33:14,806 main - 1 collections initialized for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:14,809 main - Done loading collection
+06 ноя 2016 00:33:14,810 main - Loading collection: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:14,811 main - select teams0_.projectID as projectI1_1_0_, teams0_.teamID as teamID2_2_0_, team1_.teamID as teamID1_3_1_, team1_.name as name2_3_1_ from projects_teams teams0_ inner join teams team1_ on teams0_.teamID=team1_.teamID where teams0_.projectID=?
+06 ноя 2016 00:33:14,819 main - Preparing collection intializer : [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:14,820 main - 1 collections were found in result set for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:14,820 main - Collection fully initialized: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:14,820 main - 1 collections initialized for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:14,822 main - Done loading collection
+06 ноя 2016 00:33:14,822 main - Reading all TeamsProjects [-----------------------------------------------------------------------------------------------
+Название проекта: Project 1; 
+ID проекта: 1
+Рабочие группы: 
+, -----------------------------------------------------------------------------------------------
+Название проекта: Project 2; 
+ID проекта: 2
+Рабочие группы: 
+, -----------------------------------------------------------------------------------------------
+Название проекта: Project 3; 
+ID проекта: 3
+Рабочие группы: 
+]
+06 ноя 2016 00:33:14,823 main - Releasing JDBC connection
+06 ноя 2016 00:33:14,824 main - Released JDBC connection
+06 ноя 2016 00:33:18,231 pool-1-thread-1 - Connection pool now considered primed; min-size will be maintained
+06 ноя 2016 00:33:28,775 main - begin
+06 ноя 2016 00:33:28,775 main - Obtaining JDBC connection
+06 ноя 2016 00:33:28,776 main - Obtained JDBC connection
+06 ноя 2016 00:33:28,776 main - initial autocommit status: false
+06 ноя 2016 00:33:28,777 main - select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=?
+06 ноя 2016 00:33:28,780 main - Starting ResultSet row #0
+06 ноя 2016 00:33:28,785 main - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+06 ноя 2016 00:33:28,790 main - Resolving associations for [ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:28,790 main - Done materializing entity [ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:28,792 main - Done entity load : ProjectSystem.model.Project#3
+06 ноя 2016 00:33:28,795 main - begin
+06 ноя 2016 00:33:28,795 main - Obtaining JDBC connection
+06 ноя 2016 00:33:28,810 main - Obtained JDBC connection
+06 ноя 2016 00:33:28,811 main - initial autocommit status: false
+06 ноя 2016 00:33:28,812 main - committing
+06 ноя 2016 00:33:28,816 main - committed JDBC Connection
+06 ноя 2016 00:33:28,818 main - Releasing JDBC connection
+06 ноя 2016 00:33:28,818 main - Released JDBC connection
+06 ноя 2016 00:33:28,820 main - Loading collection: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:28,820 main - select teams0_.projectID as projectI1_1_0_, teams0_.teamID as teamID2_2_0_, team1_.teamID as teamID1_3_1_, team1_.name as name2_3_1_ from projects_teams teams0_ inner join teams team1_ on teams0_.teamID=team1_.teamID where teams0_.projectID=?
+06 ноя 2016 00:33:28,822 main - Preparing collection intializer : [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:28,822 main - 1 collections were found in result set for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:28,822 main - Collection fully initialized: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:28,822 main - 1 collections initialized for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:28,823 main - Done loading collection
+06 ноя 2016 00:33:28,828 main - committing
+06 ноя 2016 00:33:28,830 main - Processing flush-time cascades
+06 ноя 2016 00:33:28,836 main - Dirty checking collections
+06 ноя 2016 00:33:28,837 main - Collection dirty: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:28,849 main - Collection found: [ProjectSystem.model.Project.teams#3], was: [ProjectSystem.model.Project.teams#3] (initialized)
+06 ноя 2016 00:33:28,853 main - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+06 ноя 2016 00:33:28,853 main - Flushed: 0 (re)creations, 1 updates, 0 removals to 1 collections
+06 ноя 2016 00:33:28,856 main - Listing entities:
+06 ноя 2016 00:33:28,856 main - ProjectSystem.model.Project{teams=[ProjectSystem.model.Team#6], name=Project 3, projectID=3}
+06 ноя 2016 00:33:28,860 main - Deleting rows of collection: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:28,867 main - No rows to delete
+06 ноя 2016 00:33:28,868 main - Inserting rows of collection: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:28,882 main - insert into projects_teams (projectID, teamID) values (?, ?)
+06 ноя 2016 00:33:28,889 main - Done inserting rows: 1 inserted
+06 ноя 2016 00:33:28,926 main - committed JDBC Connection
+06 ноя 2016 00:33:28,927 main - Add team: Project 3
+06 ноя 2016 00:33:28,927 main - HHH000420: Closing un-released batch
+06 ноя 2016 00:33:28,927 main - Releasing JDBC connection
+06 ноя 2016 00:33:28,927 main - Released JDBC connection
+06 ноя 2016 00:33:28,928 main - begin
+06 ноя 2016 00:33:28,928 main - Obtaining JDBC connection
+06 ноя 2016 00:33:28,928 main - Obtained JDBC connection
+06 ноя 2016 00:33:28,928 main - initial autocommit status: false
+06 ноя 2016 00:33:28,928 main - Initializing proxy: [ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:28,929 main - select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=?
+06 ноя 2016 00:33:28,931 main - Starting ResultSet row #0
+06 ноя 2016 00:33:28,931 main - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+06 ноя 2016 00:33:28,932 main - Resolving associations for [ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:28,933 main - Done materializing entity [ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:28,934 main - Done entity load : ProjectSystem.model.Project#3
+06 ноя 2016 00:33:28,935 main - Loading collection: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:28,936 main - select teams0_.projectID as projectI1_1_0_, teams0_.teamID as teamID2_2_0_, team1_.teamID as teamID1_3_1_, team1_.name as name2_3_1_ from projects_teams teams0_ inner join teams team1_ on teams0_.teamID=team1_.teamID where teams0_.projectID=?
+06 ноя 2016 00:33:28,939 main - Preparing collection intializer : [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:28,939 main - Starting ResultSet row #0
+06 ноя 2016 00:33:28,941 main - Found row of collection: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:28,943 main - Resolving associations for [ProjectSystem.model.Team#6]
+06 ноя 2016 00:33:28,943 main - Done materializing entity [ProjectSystem.model.Team#6]
+06 ноя 2016 00:33:28,944 main - 1 collections were found in result set for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:28,944 main - Collection fully initialized: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:28,944 main - 1 collections initialized for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:28,945 main - Done loading collection
+06 ноя 2016 00:33:28,946 main - committing
+06 ноя 2016 00:33:28,946 main - Processing flush-time cascades
+06 ноя 2016 00:33:28,950 main - Dirty checking collections
+06 ноя 2016 00:33:28,951 main - Collection found: [ProjectSystem.model.Project.teams#3], was: [ProjectSystem.model.Project.teams#3] (initialized)
+06 ноя 2016 00:33:28,951 main - Collection found: [ProjectSystem.model.Team.developers#6], was: [ProjectSystem.model.Team.developers#6] (uninitialized)
+06 ноя 2016 00:33:28,952 main - Collection found: [ProjectSystem.model.Team.projects#6], was: [ProjectSystem.model.Team.projects#6] (uninitialized)
+06 ноя 2016 00:33:28,952 main - Flushed: 0 insertions, 0 updates, 0 deletions to 2 objects
+06 ноя 2016 00:33:28,952 main - Flushed: 0 (re)creations, 0 updates, 0 removals to 3 collections
+06 ноя 2016 00:33:28,953 main - Listing entities:
+06 ноя 2016 00:33:28,953 main - ProjectSystem.model.Project{teams=[ProjectSystem.model.Team#6], name=Project 3, projectID=3}
+06 ноя 2016 00:33:28,953 main - ProjectSystem.model.Team{projects=<uninitialized>, developers=<uninitialized>, teamID=6, name=Group new}
+06 ноя 2016 00:33:28,954 main - committed JDBC Connection
+06 ноя 2016 00:33:28,955 main - Releasing JDBC connection
+06 ноя 2016 00:33:28,955 main - Released JDBC connection
+06 ноя 2016 00:33:35,346 main - begin
+06 ноя 2016 00:33:35,347 main - Obtaining JDBC connection
+06 ноя 2016 00:33:35,347 main - Obtained JDBC connection
+06 ноя 2016 00:33:35,347 main - initial autocommit status: false
+06 ноя 2016 00:33:35,348 main - Initializing proxy: [ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:35,348 main - select project0_.projectID as projectI1_1_0_, project0_.name as name2_1_0_ from projects project0_ where project0_.projectID=?
+06 ноя 2016 00:33:35,354 main - Starting ResultSet row #0
+06 ноя 2016 00:33:35,354 main - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+06 ноя 2016 00:33:35,355 main - Resolving associations for [ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:35,356 main - Done materializing entity [ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:35,358 main - Done entity load : ProjectSystem.model.Project#3
+06 ноя 2016 00:33:35,359 main - Loading collection: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:35,359 main - select teams0_.projectID as projectI1_1_0_, teams0_.teamID as teamID2_2_0_, team1_.teamID as teamID1_3_1_, team1_.name as name2_3_1_ from projects_teams teams0_ inner join teams team1_ on teams0_.teamID=team1_.teamID where teams0_.projectID=?
+06 ноя 2016 00:33:35,361 main - Preparing collection intializer : [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:35,361 main - Starting ResultSet row #0
+06 ноя 2016 00:33:35,363 main - Found row of collection: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:35,363 main - Resolving associations for [ProjectSystem.model.Team#6]
+06 ноя 2016 00:33:35,364 main - Done materializing entity [ProjectSystem.model.Team#6]
+06 ноя 2016 00:33:35,364 main - 1 collections were found in result set for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:35,364 main - Collection fully initialized: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:35,364 main - 1 collections initialized for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:35,365 main - Done loading collection
+06 ноя 2016 00:33:35,366 main - committing
+06 ноя 2016 00:33:35,366 main - Processing flush-time cascades
+06 ноя 2016 00:33:35,366 main - Dirty checking collections
+06 ноя 2016 00:33:35,367 main - Collection found: [ProjectSystem.model.Project.teams#3], was: [ProjectSystem.model.Project.teams#3] (initialized)
+06 ноя 2016 00:33:35,367 main - Collection found: [ProjectSystem.model.Team.developers#6], was: [ProjectSystem.model.Team.developers#6] (uninitialized)
+06 ноя 2016 00:33:35,367 main - Collection found: [ProjectSystem.model.Team.projects#6], was: [ProjectSystem.model.Team.projects#6] (uninitialized)
+06 ноя 2016 00:33:35,367 main - Flushed: 0 insertions, 0 updates, 0 deletions to 2 objects
+06 ноя 2016 00:33:35,368 main - Flushed: 0 (re)creations, 0 updates, 0 removals to 3 collections
+06 ноя 2016 00:33:35,368 main - Listing entities:
+06 ноя 2016 00:33:35,368 main - ProjectSystem.model.Project{teams=[ProjectSystem.model.Team#6], name=Project 3, projectID=3}
+06 ноя 2016 00:33:35,368 main - ProjectSystem.model.Team{projects=<uninitialized>, developers=<uninitialized>, teamID=6, name=Group new}
+06 ноя 2016 00:33:35,369 main - committed JDBC Connection
+06 ноя 2016 00:33:35,370 main - Releasing JDBC connection
+06 ноя 2016 00:33:35,370 main - Released JDBC connection
+06 ноя 2016 00:33:40,285 main - select project0_.projectID as projectI1_1_, project0_.name as name2_1_ from projects project0_
+06 ноя 2016 00:33:40,285 main - Obtaining JDBC connection
+06 ноя 2016 00:33:40,285 main - Obtained JDBC connection
+06 ноя 2016 00:33:40,289 main - Result set row: 0
+06 ноя 2016 00:33:40,290 main - Result row: EntityKey[ProjectSystem.model.Project#1]
+06 ноя 2016 00:33:40,291 main - Result set row: 1
+06 ноя 2016 00:33:40,291 main - Result row: EntityKey[ProjectSystem.model.Project#2]
+06 ноя 2016 00:33:40,291 main - Result set row: 2
+06 ноя 2016 00:33:40,292 main - Result row: EntityKey[ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:40,292 main - Resolving associations for [ProjectSystem.model.Project#1]
+06 ноя 2016 00:33:40,293 main - Done materializing entity [ProjectSystem.model.Project#1]
+06 ноя 2016 00:33:40,293 main - Resolving associations for [ProjectSystem.model.Project#2]
+06 ноя 2016 00:33:40,293 main - Done materializing entity [ProjectSystem.model.Project#2]
+06 ноя 2016 00:33:40,293 main - Resolving associations for [ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:40,294 main - Done materializing entity [ProjectSystem.model.Project#3]
+06 ноя 2016 00:33:40,297 main - Loading collection: [ProjectSystem.model.Project.teams#1]
+06 ноя 2016 00:33:40,297 main - select teams0_.projectID as projectI1_1_0_, teams0_.teamID as teamID2_2_0_, team1_.teamID as teamID1_3_1_, team1_.name as name2_3_1_ from projects_teams teams0_ inner join teams team1_ on teams0_.teamID=team1_.teamID where teams0_.projectID=?
+06 ноя 2016 00:33:40,300 main - Preparing collection intializer : [ProjectSystem.model.Project.teams#1]
+06 ноя 2016 00:33:40,301 main - 1 collections were found in result set for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:40,301 main - Collection fully initialized: [ProjectSystem.model.Project.teams#1]
+06 ноя 2016 00:33:40,301 main - 1 collections initialized for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:40,302 main - Done loading collection
+06 ноя 2016 00:33:40,303 main - Loading collection: [ProjectSystem.model.Project.teams#2]
+06 ноя 2016 00:33:40,303 main - select teams0_.projectID as projectI1_1_0_, teams0_.teamID as teamID2_2_0_, team1_.teamID as teamID1_3_1_, team1_.name as name2_3_1_ from projects_teams teams0_ inner join teams team1_ on teams0_.teamID=team1_.teamID where teams0_.projectID=?
+06 ноя 2016 00:33:40,305 main - Preparing collection intializer : [ProjectSystem.model.Project.teams#2]
+06 ноя 2016 00:33:40,305 main - 1 collections were found in result set for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:40,306 main - Collection fully initialized: [ProjectSystem.model.Project.teams#2]
+06 ноя 2016 00:33:40,306 main - 1 collections initialized for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:40,307 main - Done loading collection
+06 ноя 2016 00:33:40,308 main - Loading collection: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:40,308 main - select teams0_.projectID as projectI1_1_0_, teams0_.teamID as teamID2_2_0_, team1_.teamID as teamID1_3_1_, team1_.name as name2_3_1_ from projects_teams teams0_ inner join teams team1_ on teams0_.teamID=team1_.teamID where teams0_.projectID=?
+06 ноя 2016 00:33:40,313 main - Preparing collection intializer : [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:40,313 main - Starting ResultSet row #0
+06 ноя 2016 00:33:40,315 main - Found row of collection: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:40,315 main - Resolving associations for [ProjectSystem.model.Team#6]
+06 ноя 2016 00:33:40,316 main - Done materializing entity [ProjectSystem.model.Team#6]
+06 ноя 2016 00:33:40,316 main - 1 collections were found in result set for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:40,316 main - Collection fully initialized: [ProjectSystem.model.Project.teams#3]
+06 ноя 2016 00:33:40,316 main - 1 collections initialized for role: ProjectSystem.model.Project.teams
+06 ноя 2016 00:33:40,317 main - Done loading collection
+06 ноя 2016 00:33:40,318 main - Reading all TeamsProjects [-----------------------------------------------------------------------------------------------
+Название проекта: Project 1; 
+ID проекта: 1
+Рабочие группы: 
+, -----------------------------------------------------------------------------------------------
+Название проекта: Project 2; 
+ID проекта: 2
+Рабочие группы: 
+, -----------------------------------------------------------------------------------------------
+Название проекта: Project 3; 
+ID проекта: 3
+Рабочие группы: 
+ID группы: 6 Название группы: Group new
+]
+06 ноя 2016 00:33:40,318 main - Releasing JDBC connection
+06 ноя 2016 00:33:40,318 main - Released JDBC connection
+06 ноя 2016 00:33:43,473 main - HHH000031: Closing
+06 ноя 2016 00:33:43,475 main - HHH000030: Cleaning up connection pool [jdbc:mysql://localhost/DevelopmentDB]
+06 ноя 2016 00:33:43,484 main - Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+06 ноя 2016 00:33:43,485 main - Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
